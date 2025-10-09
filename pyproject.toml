@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "your_project"
+version = "0.1.0"
+
+dependencies = [
+    # Add runtime dependencies here
+]
+
+[project.optional-dependencies]
+dev = [
+    "mkdocs==1.6.1",
+    "mkdocs-include-markdown-plugin==7.1.5",
+    "mkdocs-jupyter==0.25.1",
+    "mkdocs-exclude==1.0.2",
+    "mkdocs-material==9.6.12",
+    "python-markdown-math==0.9"
+]
