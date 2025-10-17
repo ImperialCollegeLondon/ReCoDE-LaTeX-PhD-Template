@@ -1,1 +1,22 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.lof
+*.lot
+*.run.xml
+*.nav
+*.snm
+*.vrb
 
+# Editor/OS
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
