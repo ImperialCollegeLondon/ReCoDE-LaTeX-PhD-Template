@@ -129,7 +129,7 @@ These files are provided for use in theses, presentations, and supplementary gra
 
 ### Logo — Core Brand
 
-![Imperial College London Logo](docs/assets/Logo_RGB.png)
+![Imperial College London Logo](docs/assets/Logos/)
 
 | Format | File | Recommended Use | Size / Dimensions |
 |--------|------|------------|-----------------|
