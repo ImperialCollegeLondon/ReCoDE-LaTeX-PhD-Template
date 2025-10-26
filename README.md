@@ -1,87 +1,84 @@
-<!--
-This README template is designed with dual purpose.
+<!-- Imperial College London PhD Thesis Template README -->
 
-It should help you think about and plan various aspects of your
-exemplar. In this regard, the document need not be completed in
-a single pass. Some sections will be relatively straightforward
-to complete, others may evolve over time.
+# 📘 Imperial College London PhD Thesis LaTeX Template
 
-Once complete, this README will serve as the landing page for
-your exemplar, providing learners with an outline of what they
-can expect should they engage with the work.
+This repository provides a **LaTeX template** designed for preparing and formatting a **PhD Thesis at Imperial College London**.  
+The template ensures **full compliance with Imperial College’s official thesis formatting guidelines**, while offering a **clear, modern, and modular structure** that supports ease of use and long-term maintainability.
 
-Recall that you are developing a software project and learning
-resource at the same time. It is important to keep this in mind
-throughout the development and plan accordingly.
--->
+![Imperial Thesis Template Preview](docs/assets/readme-img.png)
 
+---
 
-<!-- Your exemplar title. Make it sound catchy! -->
-# This is my exemplar title
+### 👥 Authors & Acknowledgements
 
-<!-- A brief description of your exemplar, which may include an image -->
-This is a brief abstract of my exemplar, which includes a representative image.
-![Scikit Camera Image](docs/assets/readme-img.png)
+This exemplar was developed at **Imperial College London** by:
 
-<!-- Author information -->
-This exemplar was developed at Imperial College London by (YOUR NAME) in
-collaboration with (RSE MENTOR) from Research Software Engineering and
-(RCDS MENTOR) from Research Computing & Data Science at the Early Career
-Researcher Institute.
+- **João Graça Gomes**  - PhD Candidate, Dyson School of Design Engineering
+- **Dr. Chris Cooling** – Senior Teaching Fellow, Early Career Researcher Institute  
+- **Diego Alonso Alvarez** – Head of Research Software Engineering, ICT, Central Faculty  
 
+---
 
-<!-- Learning Outcomes. 
-Aim for 3 - 4 points that illustrate what knowledge and
-skills will be gained by studying your ReCoDE exemplar. -->
-## Learning Outcomes 🎓
+## 🎓 Learning Outcomes
 
-After completing this exemplar, students will:
+The main objective of this project is to develop a **standardized, user-friendly LaTeX template** that:
 
-- Learning Outcome 1
-- Learning Outcome 2
-- Learning Outcome 3
+1. **Conforms strictly** to Imperial College London’s thesis presentation regulations and formatting requirements.  
+2. **Facilitates consistency** in typography, structure, and referencing across departments and research groups.  
+3. **Simplifies the writing process** for postgraduate researchers by providing pre-defined environments for chapters, sections, figures, tables, and appendices.  
+4. **Integrates best practices** in academic writing, including compatibility with BibLaTeX for references and packages for mathematical typesetting, graphics, and indexing.  
+5. **Ensures long-term maintainability**, with modular configuration files (e.g., `preamble.tex`, `settings.tex`) for easy customization.  
 
+---
 
-<!-- Audience. Think broadly as to who will benefit. -->
-## Target Audience 🎯
+## 🎯 Target Audience
 
-Who will benefit from studying this exemplar.
+This LaTeX template is designed primarily for **postgraduate researchers** preparing their **Doctor of Philosophy (PhD)** theses at **Imperial College London**, but it can also benefit a broader academic audience.
 
+### The following groups will find this exemplar particularly useful:
 
-<!-- Requirements.
-What skills and knowledge will students need before starting?
-e.g. ECRI courses, knowledge of a programming language or library...
+#### 1. PhD Candidates at Imperial College London
+- Students seeking a compliant, ready-to-use LaTeX framework that meets official thesis formatting regulations.  
+- Researchers aiming to produce a professional and consistent document for both printed and electronic submission.  
 
-Is it a prerequisite skill or learning outcome?
-e.g. If your project uses a niche library, you could either set it as a
-requirement or make it a learning outcome above. If a learning outcome,
-you must include a relevant section that helps with learning this library.
--->
-## Prerequisites ✅
+#### 2. Supervisors and Research Advisors
+- Academics who wish to provide their students with a standardised, institutionally aligned thesis format.  
+- Supervisors reviewing draft theses who value a consistent structure for efficient feedback.  
 
-### Academic 📚
+#### 3. Departmental Administrators and Graduate Schools
+- Departments interested in maintaining uniformity in the presentation of theses across research groups.  
+- Administrative teams developing departmental LaTeX templates derived from this core structure.  
 
-- Required skills/knowledge (e.g. programming languages, libraries, theory, courses)
+#### 4. Postgraduate Researchers from Other Institutions
+- Scholars from other universities looking for a high-quality exemplar of a compliant UK-style PhD thesis format.  
+- Researchers who wish to adapt Imperial’s clear, modular structure for their own institutional guidelines.  
 
-### System 💻
+---
 
-- System requirements (e.g. Python 3.11+, Anaconda, 50 GB disk space, etc.)
-- Hardware or HPC requirements (if any)
+## ✅ Prerequisites
 
+### 📚 Academic
+- Familiarity with **LaTeX** and basic document compilation workflows.  
+- Understanding of **academic writing conventions** and thesis structure (chapters, abstracts, references, appendices).  
+- Optional: Experience with **BibLaTeX**, **Biber**, and reference management tools (e.g., Zotero, Mendeley).  
 
-<!-- Quick Start Guide. Tell learners how to engage with the exemplar. -->
-## Getting Started 🚀
+### 💻 System
+- A **LaTeX distribution** such as [TeX Live](https://www.tug.org/texlive/), [MiKTeX](https://miktex.org/), or [MacTeX](https://www.tug.org/mactex/).  
+- Recommended compiler: **XeLaTeX** or **LuaLaTeX** for full Unicode and font support.  
+- Compatible with **Overleaf**, **TeXstudio**, **VS Code with LaTeX Workshop**, or any LaTeX IDE.  
+- Minimum **5 GB free disk space** for LaTeX installation and auxiliary files.  
 
-e.g. Step-by-step guide:
+---
 
-1. Start by (instruction).
-2. Visit the sections of this notebook in some particular order.
-3. Attempt exercises `1a`, `1b`, etc.
-4. Progress to advanced materials in the Github repository linked here.
-5. Compare with solutions available in the `solutions` folder.
+## 🚀 Getting Started
+
+Follow these steps to begin using the Imperial College London PhD Thesis Template:
+
+1. **Clone or download** this repository:  
+   ```bash
+   git clone https://github.com/your-username/imperial-thesis-template.git
 
 
-<!-- Background. Tell learners about why this exemplar is useful. -->
 ## Disciplinary Background 🔬
      
 Briefly describe how this project fits in your discipline, why you chose
