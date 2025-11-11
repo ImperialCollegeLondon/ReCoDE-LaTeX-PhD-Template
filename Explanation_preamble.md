@@ -72,18 +72,36 @@ Students normally do not need to modify the preamble, but understanding it helps
                                 % Imperial requires equal left/right margins (4.3) and continuous
                                 % Arabic page numbering from the title page onward (4.4).
                                 % These geometry settings enforce the margin requirement.
+                                % You may adjust the margin values if needed, but the left and right
+                                % margins must remain symmetrical to comply with Imperial regulation 4.3.
 
 % ------------------------------------------------------
 % Bibliography (BibLaTeX + Biber)
 % ------------------------------------------------------
 \usepackage[
-    backend=biber,
-    style=authoryear,
-    maxcitenames=2
+    backend=biber,              % Biber is the recommended backend for BibLaTeX.
+                                % It supports modern features such as UTF-8, DOIs,
+                                % URLs, and complex name formats.
+                                % More reliable and flexible than BibTeX.
+
+    style=authoryear,           % Citation style used throughout the thesis.
+                                % Produces citations like "Smith (2020)" or "(Smith, 2020)".
+                                % Imperial does not prescribe a specific style,
+                                % but author–year formats are standard in engineering,
+                                % design research, and most scientific disciplines.
+
+    maxcitenames=2              % Limits in-text citations to two authors before "et al.".
+                                % Example: "Smith & Doe (2021)" or "Smith et al. (2021)".
 ]{biblatex}
-\addbibresource{bibliography.bib}
-                                % BibLaTeX is fully acceptable. No prescribed style in checklist.
-                                % Authoryear format is common for engineering and design research.
+
+\addbibresource{bibliography.bib} 
+                                % Loads the .bib file containing all references.
+                                % Students maintain this file manually or export it
+                                % from Mendeley, Zotero, EndNote, etc.
+                                %
+                                % BibLaTeX is fully acceptable under Imperial guidelines:
+                                % - The checklist does not mandate any specific reference style.
+                                % - It only requires a consistent format throughout the thesis.
 
 % ------------------------------------------------------
 % Section headings
