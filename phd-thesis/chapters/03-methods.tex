@@ -1,1 +1,17 @@
+In many experimental analyses, it is important to quantify the variability of the measurements. 
+The standard deviation provides a measure of how spread out the data are from the mean. 
+For a sample of $n$ observations, $x_1, x_2, \dots, x_n$, the sample standard deviation $s$ is defined as:
 
+\begin{equation}
+s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} \left(x_i - \bar{x}\right)^2 }
+\label{eq:std_sample}
+\end{equation}
+
+where $\bar{x}$ is the sample mean:
+
+\begin{equation}
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\label{eq:mean_sample}
+\end{equation}
+
+Equation~\ref{eq:std_sample} shows that the standard deviation increases as the data points deviate more from the mean.
