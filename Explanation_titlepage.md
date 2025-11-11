@@ -3,7 +3,7 @@
 This page explains the structure and purpose of the custom title page used in the thesis template for Imperial College London, Dyson School of Design Engineering.
 Each element is annotated to clarify whether it is mandatory, recommended, or purely stylistic.
 
-'''
+```latex
 \begin{titlepage}
 \thispagestyle{fancy}               % Ensures the page number appears (custom request).
                                     % Uses the fancy page style defined in the main file.
@@ -110,4 +110,4 @@ Each element is annotated to clarify whether it is mandatory, recommended, or pu
                                     % Optional: may replace with official submission date.
 
 \end{titlepage}
-'''
+```
