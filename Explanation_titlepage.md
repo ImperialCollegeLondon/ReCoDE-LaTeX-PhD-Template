@@ -1,4 +1,4 @@
-# **Title Page Explanation**
+# **📄Title Page Explanation**
 
 This page explains the structure and purpose of the custom title page used in the thesis template for Imperial College London, Dyson School of Design Engineering.
 Each element is annotated to clarify whether it is mandatory, recommended, or purely stylistic.
