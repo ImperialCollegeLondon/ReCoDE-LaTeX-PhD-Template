@@ -1,12 +1,19 @@
 # **📄Title Page Explanation**
 
-This page explains the structure and purpose of the custom title page used in the thesis template for Imperial College London, Dyson School of Design Engineering.
+This page explains the structure and purpose of the custom title page used in the PhD thesis template for Imperial College London.
 Each element is annotated to clarify whether it is mandatory, recommended, or purely stylistic.
 
 ```latex
 \begin{titlepage}
-\thispagestyle{fancy}               % Ensures the page number appears (custom request).
-                                    % Uses the fancy page style defined in the main file.
+\thispagestyle{fancy}               % The title page MUST display a page number.
+                                    % This follows Theses for Imperial College Research Degrees Checklist
+                                    % Point 4.4, which states that all pages must
+                                    % be numbered in one continuous sequence, i.e. from the title page
+                                    % to the last page of type, in Arabic numerals from 1 onwards.
+                                    %This sequence must include everything included in the document,
+                                    % including maps, diagrams, blank pages, etc. 
+                                    % Applying the'fancy' page style ensures the required footer with
+                                    % the page number is present on the title page.
 
   \centering                        % Centers the whole layout horizontally.
                                     % Recommended for a clean, balanced title page.
@@ -22,8 +29,8 @@ Each element is annotated to clarify whether it is mandatory, recommended, or pu
     {\fontsize{16pt}{18pt}\selectfont C}OLLEGE 
     {\fontsize{16pt}{18pt}\selectfont L}ONDON\par
   }
-                                    % Mandatory: full institution name must appear.
-                                    % Custom typography: capital first letter with small caps style.
+                                    % Mandatory: full institution name must appear. Point 4.5 of the Checklist.
+                                    % Custom typography: capital first letter with small caps style. Can be modified according to the student choice.
 
   \vspace{0.5cm}
 
@@ -37,7 +44,7 @@ Each element is annotated to clarify whether it is mandatory, recommended, or pu
     {\fontsize{14pt}{16pt}\selectfont D}ESIGN 
     {\fontsize{14pt}{16pt}\selectfont E}NGINEERING\par
   }
-                                    % Mandatory: must display your registered Department or School.
+                                    % Mandatory: must display your registered Department or School (point 4.5)
                                     % Here: Dyson School of Design Engineering.
 
   \vspace{6cm}                      % Large vertical spacing to separate header from the title block.
@@ -55,7 +62,7 @@ Each element is annotated to clarify whether it is mandatory, recommended, or pu
     PhD Thesis Template\\
     An Example to Work On\par       % Replace with your actual approved thesis title.
   }
-                                    % Mandatory: official thesis title.
+                                    % Mandatory: official thesis title. (point 4.5)
                                     % Recommended: use \huge and \bfseries for emphasis.
 
   \vspace{0.3cm}
@@ -80,7 +87,7 @@ Each element is annotated to clarify whether it is mandatory, recommended, or pu
   % Candidate Name
   % -------------------------------
   {\Large Jo\~{a}o Graça Gomes\par}
-                                    % Mandatory: candidate's full registered name.
+                                    % Mandatory: candidate's full registered name. (point 4.5)
 
   \vspace{1cm}
 
@@ -97,8 +104,12 @@ Each element is annotated to clarify whether it is mandatory, recommended, or pu
     Dr. Winston {\fontsize{14pt}{16pt}\selectfont S}{\textsc{MITH}}     & Chemical Engineering\\
     Mr. Bernard {\fontsize{14pt}{16pt}\selectfont M}{\textsc{ARX}}      & Energy Futures Lab\\
   \end{tabular*}
-                                    % Optional but strongly recommended for readability.
-                                    % Right column lists affiliations.
+                                    % Including supervisor names and their affiliations is not
+                                    % required by the Imperial checklist, but it is considered
+                                    % good academic practice and improves clarity.
+                                    % The left column lists supervisor names; the right column
+                                    % provides their departmental or institutional affiliation.
+                                    
 
   % -------------------------------
   % Submission Date
@@ -106,8 +117,10 @@ Each element is annotated to clarify whether it is mandatory, recommended, or pu
   \vfill                             % Pushes the date to the bottom of the page.
                                     % Recommended for balanced layout.
 
-  \today                             % Compilation date.
-                                    % Optional: may replace with official submission date.
+  \today                             % Displays the compilation date.
+                                     % Optional: may be replaced with the official submission date.
+                                     % The Imperial checklist does not require a date on the title
+                                     % page, but including one is considered good academic practice.
 
 \end{titlepage}
 ```
