@@ -114,7 +114,26 @@ $P$ & Power (W) \\
 \appendix
 \chapter{Appendix A}
 % Appendix content here
+In LaTeX, we can include Python code using the \texttt{minted} package,
+which provides nice syntax highlighting. Below is a simple example 
+to calculate the hypotenuse of a right triangle using Pythagoras' theorem.
 
+%%% In the following code \begin{minted}   Wraps the  code you want to display. {python} tells minted which language to highlight. Everything inside is shown in the PDF with proper colours and formatting, but it is not executed.
+%%% Code formatting in the PDF Indentation, keywords, comments, and strings are automatically highlighted by minted. This makes the code readable and professional-looking, ideal for tutorials, homework, or papers.
+
+\begin{minted}{python}   
+
+import math
+
+def pythagoras(a, b):
+    return math.sqrt(a**2 + b**2)
+
+# Example usage
+side1 = 3
+side2 = 4
+hypotenuse = pythagoras(side1, side2)
+print("Hypotenuse:", hypotenuse)
+\end{minted}
 % -------------------------------
 % Back matter
 % -------------------------------
