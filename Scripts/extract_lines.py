@@ -6,10 +6,10 @@
 # -------------------------------
 
 # Path to your LaTeX file
-input_file = "thesis/preamble.tex"
+input_file = "phd-thesis/main.tex"
 
 # Path to the output Markdown file
-output_file = "Explanations/Preamble.md"
+output_file = "Explanations/Testing.md"
 
 # Lines you want to include (start and end, inclusive)
 start_line = 2
