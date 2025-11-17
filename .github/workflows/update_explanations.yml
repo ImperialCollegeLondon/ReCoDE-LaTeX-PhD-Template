@@ -1,14 +1,14 @@
 name: Update Explanations
 
-# Trigger workflow when thesis/preamble.tex changes
 on:
   push:
     paths:
-      - 'phd-thesis/preamble.tex'
+      - 'phd-thesis/main.tex'   # Trigger only if main.tex changes
 
 jobs:
   update-md:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
@@ -17,13 +17,14 @@ jobs:
         with:
           python-version: 3.x
 
-      - name: Run extract script
+      - name: Run extract_lines.py
         run: python Scripts/extract_lines.py
 
       - name: Commit changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add Explanations/Preamble.md
-          git commit -m "Auto-update preamble explanation" || echo "No changes to commit"
+          git add Explanations/Testing.md
+          git commit -m "Auto-update Testing.md" || echo "No changes to commit"
           git push
+
