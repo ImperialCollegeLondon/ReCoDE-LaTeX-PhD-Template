@@ -86,9 +86,9 @@ Students normally do not need to modify the preamble, but understanding it helps
 
     style=authoryear,           % Citation style used throughout the thesis.
                                 % Produces citations like "Smith (2020)" or "(Smith, 2020)".
-                                % Imperial does not prescribe a specific style,
-                                % but author–year formats are standard in engineering,
-                                % design research, and most scientific disciplines.
+                                % Imperial does not prescribe a specific style.
+                                % Choose the citation/bibliography style that suits your field, department, and supervisor     preferences.                    % Common biblatex styles include: authoryear, numeric, ieee, apa, alphabetic, etc.
+                                % Set your choice via the biblatex 'style=' option; follow your local guidelines.
 
     maxcitenames=2              % Limits in-text citations to two authors before "et al.".
                                 % Example: "Smith & Doe (2021)" or "Smith et al. (2021)".
