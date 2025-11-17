@@ -32,4 +32,5 @@ with open(output_file, "w") as f:
     f.writelines(selected_lines)    # Write the selected lines
     f.write("\n```")                # End of Markdown code block
 
-print(f"Lines {start_line}-{end_line} from {input_file} written to {output_file}")
+print(f"Lines {start_line}-{end_line} from {input_file} written to {output_file}")  #
+
