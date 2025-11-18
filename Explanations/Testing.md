@@ -1,6 +1,6 @@
 ```latex
 \input{preamble.tex}
-%TEEEEEEESSSSSSTING
+
 % -------------------------------
 % Page style: centered page numbers at bottom
 % -------------------------------
