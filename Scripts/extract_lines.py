@@ -1,36 +1,51 @@
-# File: extract_lines.py
-# Purpose: Extract specific lines from a LaTeX file and generate a Markdown snippet.
+# File: generate_include_snippet.py
+# Purpose: Generate a Markdown snippet using mkdocs-include-markdown-plugin
+#          instead of copying LaTeX lines manually.
 
-# -------------------------------
+# ---------------------------------------------------
 # CONFIGURATION
-# -------------------------------
+# ---------------------------------------------------
 
-# Path to your LaTeX file
+# Path to your LaTeX source
 input_file = "phd-thesis/main.tex"
 
-# Path to the output Markdown file
+# Output Markdown file
 output_file = "Explanations/Testing.md"
 
-# Lines you want to include (start and end, inclusive)
-start_line = 2
-end_line = 10
+# Markers inside the LaTeX file
+start_marker = "% START SNIPPET"
+end_marker   = "% END SNIPPET"
 
-# -------------------------------
+# ---------------------------------------------------
 # SCRIPT
-# -------------------------------
+# ---------------------------------------------------
 
-# Read the LaTeX file
+# Read lines
 with open(input_file, "r") as f:
     lines = f.readlines()
 
-# Select only the desired lines
-selected_lines = lines[start_line - 1 : end_line]  # Python is 0-indexed
+# Find line numbers of the markers
+start_line = None
+end_line = None
 
-# Write the selected lines to the Markdown file with fenced code block
+for idx, line in enumerate(lines, start=1):
+    if start_marker in line:
+        start_line = idx + 1   # content starts AFTER marker
+    if end_marker in line:
+        end_line = idx - 1     # content ends BEFORE marker
+
+# Safety check
+if start_line is None or end_line is None:
+    raise ValueError("Start or end marker not found in LaTeX file.")
+
+# Write the INCLUDE directive instead of copying text
 with open(output_file, "w") as f:
-    f.write("```latex\n")          # Start of Markdown code block
-    f.writelines(selected_lines)    # Write the selected lines
-    f.write("\n```")                # End of Markdown code block
+    f.write("```markdown\n")
+    f.write(f":::include ../{input_file}\n")
+    f.write(f"    start={start_line}\n")
+    f.write(f"    end={end_line}\n")
+    f.write("    code_language=latex\n")
+    f.write("```\n")
 
-print(f"Lines {start_line}-{end_line} from {input_file} written to {output_file}")  #
+print(f"Generated include snippet in {output_file}")
 
