@@ -10,12 +10,17 @@
 \usepackage{hyperref}
 \usepackage{bookmark}
 \usepackage{booktabs}
+\usepackage{acronym}
+\usepackage{nomencl}
+\makenomenclature
+\usepackage{geometry}
 \usepackage{minted} %to add code.
                     % for syntax-highlighted code
+                    
                     % Note: Make sure to enable "Shell escape" in Overleaf
                     % Menu → Settings → Compiler → Enable "Shell escape"
-\usepackage{geometry}
-\geometry{a4paper, inner=3cm, outer=2.5cm, top=3cm, bottom=3cm} %% testing...wwwww
+\geometry{a4paper, inner=3cm, outer=3cm, top=3cm, bottom=3cm}
+
 % Bibliography (biber + biblatex)
 \usepackage[backend=biber,style=authoryear,maxcitenames=2]{biblatex}
 \addbibresource{bibliography.bib}
