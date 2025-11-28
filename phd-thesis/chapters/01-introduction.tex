@@ -1,17 +1,37 @@
 \section{Background}
-Write the background and motivations here.
-As discussed by Orwell in his dystopian novel \cite{Orwell1984tex}.
+
+This template is not meant to be a comprehensive guide to LaTeX. Nevertheless, we have included examples of the most frequently used features—such as equations, nomenclature, images, and tables—to support students in using these elements effectively throughout their thesis.
+% You can add an empty line to start a new paragraph.
+
+To develop a thesis, you will inevitably need to manage both acronyms and scientific nomenclature. The \texttt{acronym} package automatically generates a list of acronyms, which is a great way to keep track of your domain knowledge, such as \ac{TLA}.
+Scientific nomenclature, on the other hand, is organised in a slightly different way. For example, the speed of light is denoted by $c$ \nomenclature{$c$}{Speed of light in a vacuum}, force is calculated as $F = ma$ \nomenclature{$F$}{Force applied on an object}, and energy is $E$ \nomenclature{$E$}{Energy of a system}. Operators like $\nabla$ \nomenclature{$\nabla$}{Vector differential operator (del)} and $\partial$ \nomenclature{$\partial$}{Partial derivative operator} are also frequently used. All these definitions are managed using the nomenclature command, which allows the symbols to be collected and automatically compiled into a clear, organised list.
+To learn more, you can always refer to the official LaTeX documentation or seek guidance at early-stage researcher support centres, for example, the website of the \cite{ImperialECR}.
+
+You will also probably need to include figures and illustrations to support your discussion. For example, circular graphs can be useful to visualise distributions or proportions. In LaTeX, figures are typically added using the figure environment
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{phd-thesis/figures/11-Fig2.png}
     \caption[This is an example image]{Supply chain diagram of green hydrogen production. Adapted from \cite{Godinho2024}.}
-    \label{fig:example}
+    \label{fig:example1}
 \end{figure}
 
 
 \section{Research Questions}
 List your research questions.
 
+\section{Research Questions}
+
+The development of this thesis is guided by a set of core research questions that structure the investigation and provide a clear analytical direction. These questions help define the scope of the study and ensure that each chapter contributes meaningfully to the overall objectives of the work. It is entirely up to you how to organise the chapters. A good way to present the key research questions is by using items, for example:
+
+\begin{itemize}
+    \item How do existing frameworks or theoretical models influence the interpretation of the studied phenomena? 
+    \item What are the main methodological challenges associated with analysing the selected datasets or experimental conditions?
+    \item Which approaches or technologies offer the most effective pathway for addressing the problem outlined in the introduction?
+\end{itemize}
+
 \subsection{Contributions}
-Summarize the main contributions of this thesis.
+
+This thesis provides several important contributions to the existing body of knowledge. First, it advances the theoretical understanding of the topic by examining how established frameworks influence the interpretation of complex systems or phenomena. Second, it addresses key methodological limitations in current literature by proposing more robust analytical strategies tailored to the datasets and conditions investigated. Third, it evaluates and compares state-of-the-art approaches and technologies, identifying the most effective pathways for addressing the central research problem.
+
+Taken together, these contributions offer a meaningful extension to contemporary scholarship and help guide future research directions—much in the same way that influential earlier works have shaped their respective fields. For example, one may consider the impact of \cite{Orwell1984tex} on British dystopian literature; discussing dystopia without mentioning Orwell is rather like attempting a PhD without caffeine: technically possible, but rarely observed in the wild.
