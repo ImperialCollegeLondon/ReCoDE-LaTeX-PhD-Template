@@ -1,14 +1,39 @@
 \section{Background}
 
-This template is not meant to be a comprehensive guide to LaTeX. Nevertheless, we have included examples of the most frequently used features—such as equations, nomenclature, images, and tables—to support students in using these elements effectively throughout their thesis.
-% You can add an empty line to start a new paragraph.
+This template is not intended to be a full tutorial on \LaTeX. 
+However, throughout the thesis we have included examples of the most commonly used elements—such as equations, nomenclature, images, acronyms, and tables—to help you incorporate them effectively into your own work.
+% Tip: Use a blank line in LaTeX to start a new paragraph.
 
-To develop a thesis, you will inevitably need to manage both acronyms and scientific nomenclature. The \texttt{acronym} package automatically generates a list of acronyms, which is a great way to keep track of your domain knowledge, such as \ac{TLA}.
-Scientific nomenclature, on the other hand, is organised in a slightly different way. For example, the speed of light is denoted by $c$ \nomenclature{$c$}{Speed of light in a vacuum}, force is calculated as $F = ma$ \nomenclature{$F$}{Force applied on an object}, and energy is $E$ \nomenclature{$E$}{Energy of a system}. Operators like $\nabla$ \nomenclature{$\nabla$}{Vector differential operator (del)} and $\partial$ \nomenclature{$\partial$}{Partial derivative operator} are also frequently used. All these definitions are managed using the nomenclature command, which allows the symbols to be collected and automatically compiled into a clear, organised list.
-To learn more, you can always refer to the official LaTeX documentation or seek guidance at early-stage researcher support centres, for example, the website of the \cite{ImperialECR}.
+To develop a scientific thesis, you will almost certainly need to manage both \textbf{acronyms} and \textbf{scientific symbols}.  
+The \texttt{acronym} package allows you to define acronyms once and use them uniformly throughout the document.  
+For instance, the acronym \ac{TLA} is printed in full the first time it appears, then abbreviated afterwards.
+% Good practice: Keep the acronym definitions in a separate file for clarity.
 
-You will also probably need to include figures and illustrations to support your discussion. For example, circular graphs can be useful to visualise distributions or proportions. In LaTeX, figures are typically added using the figure environment
+Scientific nomenclature, on the other hand, is handled differently.  
+Symbols and technical quantities can be defined using the \verb|\nomenclature| command, allowing them to be automatically compiled into a neatly formatted list.
 
+For example:
+- the speed of light: $c$ \nomenclature{$c$}{Speed of light in a vacuum}  
+- force: $F = ma$ \nomenclature{$F$}{Force applied on an object}  
+- energy: $E$ \nomenclature{$E$}{Energy of a system}  
+- operators such as $\nabla$ \nomenclature{$\nabla$}{Vector differential operator (del)}  
+  and $\partial$ \nomenclature{$\partial$}{Partial derivative operator}
+
+All these definitions are collected and printed in the *Nomenclature* section using the \verb|\printnomenclature| command found in the main file.
+% Tip: Remember to run "MakeIndex" (Overleaf does this automatically with the correct settings).
+
+For more information, you can consult the official \LaTeX\ documentation or support material from postgraduate research centres such as the Early Career Researcher Institute \cite{ImperialECR}.
+
+% -------------------------------------------------------------
+% Figures
+% -------------------------------------------------------------
+You will also likely need to include figures and illustrations throughout your thesis.  
+Figures may show experimental results, conceptual diagrams, or processed data visualisations.  
+The example below demonstrates how to insert a typical image using the \texttt{figure} environment.
+
+% The 'h!' option suggests LaTeX place the figure roughly "here".
+% The optional short caption appears in the List of Figures.
+% Modify the image width using width=0.8\textwidth (or any percentage).
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{phd-thesis/figures/11-Fig2.png}
@@ -16,13 +41,16 @@ You will also probably need to include figures and illustrations to support your
     \label{fig:example1}
 \end{figure}
 
-
+% -------------------------------------------------------------
+% Research Questions
+% -------------------------------------------------------------
 \section{Research Questions}
-List your research questions.
 
-\section{Research Questions}
+The thesis is guided by a set of core research questions that structure the investigation and provide a clear analytical direction.  
+These questions help define the scope of the study and ensure that each chapter contributes meaningfully to the overarching aims of the work.
+It is entirely up to the author how to organise the chapters; however, a clear list of research questions is considered good academic practice and greatly benefits the reader.
 
-The development of this thesis is guided by a set of core research questions that structure the investigation and provide a clear analytical direction. These questions help define the scope of the study and ensure that each chapter contributes meaningfully to the overall objectives of the work. It is entirely up to you how to organise the chapters. A good way to present the key research questions is by using items, for example:
+A common way to present the key research questions is through a list, such as:
 
 \begin{itemize}
     \item How do existing frameworks or theoretical models influence the interpretation of the studied phenomena? 
@@ -30,8 +58,18 @@ The development of this thesis is guided by a set of core research questions tha
     \item Which approaches or technologies offer the most effective pathway for addressing the problem outlined in the introduction?
 \end{itemize}
 
+% -------------------------------------------------------------
+% Contributions
+% -------------------------------------------------------------
 \subsection{Contributions}
 
-This thesis provides several important contributions to the existing body of knowledge. First, it advances the theoretical understanding of the topic by examining how established frameworks influence the interpretation of complex systems or phenomena. Second, it addresses key methodological limitations in current literature by proposing more robust analytical strategies tailored to the datasets and conditions investigated. Third, it evaluates and compares state-of-the-art approaches and technologies, identifying the most effective pathways for addressing the central research problem.
+This thesis provides several contributions to the existing body of knowledge.  
 
-Taken together, these contributions offer a meaningful extension to contemporary scholarship and help guide future research directions—much in the same way that influential earlier works have shaped their respective fields. For example, one may consider the impact of \cite{Orwell1984tex} on British dystopian literature; discussing dystopia without mentioning Orwell is rather like attempting a PhD without caffeine: technically possible, but rarely observed in the wild.
+First, it advances theoretical understanding by examining how established frameworks shape the interpretation of complex systems or phenomena.  
+
+Second, it addresses methodological limitations in current literature by proposing more robust analytical strategies tailored to the datasets and experimental conditions investigated.  
+
+Third, it evaluates and compares state-of-the-art approaches and technologies, identifying the most effective pathways for addressing the central research problem.
+
+Taken together, these contributions extend contemporary scholarship and guide future work in the area, much in the same way that influential earlier works have shaped their fields.  
+For example, the impact of \cite{Orwell1984tex} on British dystopian literature is difficult to overstate; discussing dystopia without referencing Orwell is rather like attempting a PhD without caffeine: possible in principle, but seldom observed in practice.
