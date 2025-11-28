@@ -1,19 +1,35 @@
-In many experimental analyses, it is important to quantify the variability present in the measurements. 
-In this section, we illustrate how to typeset equations in \LaTeX, using the sample standard deviation as a simple example.
+% -------------------------------------------------------------
+% Example: Writing Mathematical Equations in LaTeX
+% -------------------------------------------------------------
+In many experimental analyses, it is important to quantify the variability present in the measurements.  
+In this section, we demonstrate how to typeset equations in \LaTeX{}, using the sample standard deviation as a simple example.
 
-
-The standard deviation provides a measure of how spread out the data are from the mean. For a sample of $n$ observations, $x_1, x_2, \dots, x_n$, the sample standard deviation $s$ is defined as:
-
-\begin{equation}
-s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} \left(x_i - \bar{x}\right)^2 }
-\label{eq:std_sample}
-\end{equation}
-
-where $\bar{x}$ is the sample mean:
+The standard deviation provides a measure of how spread out the data are from the mean.  
+For a sample of $n$ observations, $x_1, x_2, \dots, x_n$, the sample standard deviation $s$ is defined as:
 
 \begin{equation}
-\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
-\label{eq:mean_sample}
+    s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} \left(x_i - \bar{x}\right)^2 }
+    \label{eq:std_sample}
 \end{equation}
 
-Equation~\ref{eq:std_sample} shows that the standard deviation increases as the data points deviate more from the mean.
+% Explanation:
+% - The equation environment automatically numbers the equation.
+% - \sum creates the summation symbol.
+% - \bar{x} denotes the sample mean.
+% - Use \label to refer to the equation later in the text.
+
+where $\bar{x}$ is the sample mean, given by:
+
+\begin{equation}
+    \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+    \label{eq:mean_sample}
+\end{equation}
+
+% Tip:
+% If you want the equation unnumbered, use \[
+%   ... equation ...
+% \] instead of \begin{equation}.
+
+Equation~\ref{eq:std_sample} shows that the standard deviation increases as the data points deviate further from the sample mean.  
+This form is commonly used when analysing repeated measurements, sensor data, or experimental uncertainty.
+
