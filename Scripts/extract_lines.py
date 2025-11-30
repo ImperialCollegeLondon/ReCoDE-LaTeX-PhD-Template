@@ -1,50 +1,56 @@
-name: Update Explanations
+# File: Scripts/extract_snippet.py
+# Purpose: Extract code between START/END markers in main.tex and update Markdown explanations.
 
-on:
-  push:
-    paths:
-      - 'phd-thesis/main.tex'   # Trigger only if main.tex changes
-  workflow_dispatch:           # Allow manual run
+import re
 
-jobs:
-  update-md:
-    runs-on: ubuntu-latest
+# -------------------------------
+# CONFIGURATION
+# -------------------------------
+input_file = "phd-thesis/main.tex"                          # LaTeX source
+output_file = "docs/Explanations/1_Explanation_Main.md"    # Destination Markdown
+snippet_name = "documentclass"                              # Identifier in main.tex
 
-    steps:
-      # 1️⃣ Checkout repository with push permissions
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          persist-credentials: true   # Important for git push
+# -------------------------------
+# READ LaTeX FILE
+# -------------------------------
+with open(input_file, "r", encoding="utf-8") as f:
+    tex_lines = f.readlines()
 
-      # 2️⃣ Set up Python
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
+inside_block = False
+snippet_lines = []
 
-      # 3️⃣ Upgrade pip (optional)
-      - name: Upgrade pip
-        run: pip install --upgrade pip
+start_marker = f"% START SNIPPET: {snippet_name}"
+end_marker = f"% END SNIPPET: {snippet_name}"
 
-      # 4️⃣ Install only required dependencies
-      - name: Install dependencies
-        run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+for line in tex_lines:
+    if start_marker in line:
+        inside_block = True
+        continue
+    if end_marker in line:
+        inside_block = False
+        break  # stops after first matching snippet
+    if inside_block:
+        snippet_lines.append(line)
 
-      # 5️⃣ Run snippet extraction script
-      - name: Run extract_snippet.py
-        run: python Scripts/extract_snippet.py
+# Format snippet as LaTeX code block
+latex_block = "```latex\n" + "".join(snippet_lines) + "```\n"
 
-      # 6️⃣ Show updated Markdown for debugging (optional)
-      - name: Show updated Markdown
-        run: cat docs/Explanations/1_Explanation_Main.md
+# -------------------------------
+# UPDATE MARKDOWN FILE
+# -------------------------------
+with open(output_file, "r", encoding="utf-8") as f:
+    md_content = f.read()
 
-      # 7️⃣ Commit & push updated Markdown
-      - name: Commit updated explanations
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/Explanations/1_Explanation_Main.md
-          git diff --cached --quiet || git commit -m "Auto-update 1_Explanation_Main.md"
-          git push
+# Replace the placeholder with the extracted snippet
+updated_md = re.sub(
+    r"```latex\s*<!-- SNIPPET WILL BE AUTO-INSERTED HERE -->\s*```",
+    latex_block,
+    md_content,
+    count=1
+)
+
+# Write updated content back
+with open(output_file, "w", encoding="utf-8") as f:
+    f.write(updated_md)
+
+print(f"Snippet '{snippet_name}' inserted into {output_file}")
