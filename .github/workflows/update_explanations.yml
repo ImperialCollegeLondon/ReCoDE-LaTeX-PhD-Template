@@ -33,7 +33,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       # 5️⃣ Run snippet extraction script
-      - name: Run extract_snippet.py
+      - name: Run extract_lines.py
         run: python Scripts/extract_lines.py
 
       # 6️⃣ Show updated Markdown for debugging (optional)
