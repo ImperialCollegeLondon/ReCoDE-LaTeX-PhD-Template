@@ -7,7 +7,7 @@
 # ---------------------------------------------------
 
 input_file = "phd-thesis/main.tex"      # LaTeX source
-output_file = "Explanations/Testing.md" # Destination
+output_file = "docs/Explanations/1_Explanation_Main.md" # Destination
 
 start_marker = "% START SNIPPET"
 end_marker   = "% END SNIPPET"
