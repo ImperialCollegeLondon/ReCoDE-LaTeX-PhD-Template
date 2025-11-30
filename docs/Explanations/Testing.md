@@ -1,3 +1,3 @@
 ```latex
-<!-- SNIPPET: documentclass -->
+
 ```
