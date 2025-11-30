@@ -35,7 +35,7 @@ jobs:
         run: python Scripts/extract_lines.py
 
       - name: Show updated Markdown
-        run: cat docs/Explanations/Testing.md
+        run: cat docs/Explanations/1_Explanation_Main.md
 
       - name: Commit & push updated explanations
         run: |
