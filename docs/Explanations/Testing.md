@@ -1,3 +1,3 @@
 ```latex
-<!-- SNIPPET WILL BE AUTO-INSERTED HERE -->
+
 ```
