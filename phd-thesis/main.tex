@@ -119,7 +119,7 @@ The copyright of this thesis rests with the author and is made available under a
     \item Paper 2: Title, Journal/Conference, Year
     \item Poster 1: Title, Conference, Year
 \end{itemize}
-% START END: Dissemination
+% END SNIPPET: Dissemination
 
 % START SNIPPET: Nomenclature_Acronyms
 % -------------------------------
@@ -144,10 +144,21 @@ The copyright of this thesis rests with the author and is made available under a
 % -------------------------------
 \clearpage
 \tableofcontents
+% This command tells LaTeX to generate the Table of Contents automatically.
+% LaTeX collects all headings (chapters, sections, subsections, etc.) as it compiles and writes them to a helper file with extension .toc. On the next % compilation, it reads that .toc file and uses it to typeset the full table of contents with titles and page numbers.
+% If a new section or chapter doesn’t show up in the contents, you usually just need to compile the document at least twice.
+
 \listoffigures
+% This command generates a “List of Figures”.
+% Every time you use the figure environment together with a \caption{...}, LaTeX records that figure in a helper file with extension .lof. On the next % compilation, it reads that .lof file and prints a list showing each figure number, its caption, and the page number.
+% If the list is missing new figures or the page numbers look wrong, compile again so the .lof file is updated and then used.
+
 \listoftables
-% LaTeX generates these automatically.
-% If items do not appear, compile *twice*.
+% This command generates a “List of Tables”.
+% Every time you use the table environment with a \caption{...}, LaTeX records that table in a helper file with extension .lot. 
+% On the next compilation, it reads that .lot file and prints a list showing each table number, its caption, and the page number.
+% As with the other lists, after adding or renumbering tables you usually need at least two compilations for the list to become correct and up to date.
+
 % END SNIPPET: Contents, List of Figures/Tables
 
 % START SNIPPET: CHAPTERS
@@ -180,6 +191,7 @@ The copyright of this thesis rests with the author and is made available under a
 \appendix
 \chapter{Appendix A}
 % Add additional appendices as needed: \chapter{Appendix B}, etc.
+% END SNIPPET: APPENDIX 
 
 % -------------------------------
 % Code Example (minted)
@@ -198,7 +210,7 @@ side2 = 4
 hypotenuse = pythagoras(side1, side2)
 print("Hypotenuse:", hypotenuse)
 \end{minted}
-% END SNIPPET: APPENDIX
+
 
 % START SNIPPET: Bibliography
 % -------------------------------
