@@ -8,7 +8,7 @@ from pathlib import Path
 # -------------------------------
 
 input_file = "phd-thesis/main.tex"                # LaTeX source
-output_file = "docs/Explanations/Testing.md"     # Destination Markdown
+output_file = "docs/Explanations/1_Explanation_Main.md"     # Destination Markdown
 snippet_name = "documentclass"                    # Identifier in main.tex
 
 start_marker = f"% START SNIPPET: {snippet_name}"
