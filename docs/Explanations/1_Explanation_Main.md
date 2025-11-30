@@ -19,6 +19,7 @@ For this thesis template, the following declaration is used:
 
 ```latex
 <!-- SNIPPET WILL BE AUTO-INSERTED HERE -->
+```
 
 
 ### 🏛️ Title Page — Compliance with Imperial College Thesis Submission Checklist (§ 4.5)
