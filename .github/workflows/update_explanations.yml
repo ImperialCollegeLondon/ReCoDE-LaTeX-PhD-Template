@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: true   # Important to allow git push
+          persist-credentials: true   # Allow git push
 
       # 2️⃣ Set up Python
       - name: Set up Python
@@ -23,20 +23,20 @@ jobs:
         with:
           python-version: 3.x
 
-      # 3️⃣ Upgrade pip (optional but recommended)
+      # 3️⃣ Upgrade pip
       - name: Upgrade pip
         run: pip install --upgrade pip
 
-      # 4️⃣ Install dependencies if requirements.txt exists
+      # 4️⃣ Install dependencies (only needed packages)
       - name: Install dependencies
         run: |
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      # 5️⃣ Run your snippet extraction script
-      - name: Run extract_lines.py
-        run: python Scripts/extract_lines.py
+      # 5️⃣ Run the snippet extraction script
+      - name: Run extract_snippet.py
+        run: python Scripts/extract_snippet.py
 
-      # 6️⃣ Show updated Markdown (for debugging)
+      # 6️⃣ Show updated Markdown (debugging)
       - name: Show updated Markdown
         run: cat docs/Explanations/1_Explanation_Main.md
 
@@ -48,4 +48,5 @@ jobs:
           git add docs/Explanations/1_Explanation_Main.md
           git diff --cached --quiet || git commit -m "Auto-update 1_Explanation_Main.md"
           git push
+
 
