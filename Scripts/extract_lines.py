@@ -53,21 +53,23 @@ def main():
 
         print(f"[INFO] Snippet '{name}' length: {len(snippet)}")
 
-        # Build placeholder and replacement
+        # Exact placeholder in the Markdown
         placeholder = f"<!-- SNIPPET: {name} -->"
 
-        # Use re.escape to handle special characters in the name (spaces, commas)
+        # Escape placeholder for regex search (handles spaces, commas, etc.)
         pattern = re.escape(placeholder)
 
-        replacement = "```latex\n" + snippet + "\n```"
+        # Use a function as replacement so backslashes in LaTeX are NOT parsed
+        def repl(_match, snippet_text=snippet):
+            return "```latex\n" + snippet_text + "\n```"
 
-        new_md_content, count = re.subn(pattern, replacement, md_content)
+        new_md_content, count = re.subn(pattern, repl, md_content)
         if count == 0:
             print(f"[WARN] Placeholder not found for '{name}'")
         else:
             print(f"[INFO] Replaced {count} occurrence(s) for '{name}'")
 
-        md_content = new_md_content  # update content for next replacements
+        md_content = new_md_content  # update for next snippet
 
     md_path.parent.mkdir(parents=True, exist_ok=True)
     md_path.write_text(md_content, encoding="utf-8")
