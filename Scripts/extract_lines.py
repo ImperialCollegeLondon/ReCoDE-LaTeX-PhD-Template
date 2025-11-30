@@ -42,7 +42,7 @@ with open(explanation_file, "r", encoding="utf-8") as f:
     md = f.read()
 
 updated = re.sub(
-    r"```latex[\s\S]*?```",
+    r"```latex\n<!-- SNIPPET WILL BE AUTO-INSERTED HERE -->\n```",
     latex_block,
     md,
     count=1
