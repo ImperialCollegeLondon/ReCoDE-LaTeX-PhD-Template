@@ -4,27 +4,43 @@ on:
   push:
     paths:
       - 'phd-thesis/main.tex'   # Trigger only if main.tex changes
+  workflow_dispatch:           # Allow manual run
 
 jobs:
   update-md:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      # 1️⃣ Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
+      # 2️⃣ Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.x
 
+      # 3️⃣ Upgrade pip (optional, recommended)
+      - name: Upgrade pip
+        run: pip install --upgrade pip
+
+      # 4️⃣ Install dependencies if needed
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      # 5️⃣ Run your snippet extraction script
       - name: Run extract_lines.py
         run: python Scripts/extract_lines.py
 
-      - name: Commit changes
+      # 6️⃣ Commit & push updated Markdown
+      - name: Commit updated explanations
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add Explanations/Testing.md
-          git commit -m "Auto-update Testing.md" || echo "No changes to commit"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/Explanations/1_Explanation_Main.md
+          git diff --cached --quiet || git commit -m "Auto-update 1_Explanation_Main.md"
           git push
+
 
