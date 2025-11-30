@@ -34,19 +34,19 @@ jobs:
 
       # 5️⃣ Run snippet extraction script
       - name: Run extract_snippet.py
-        run: python Scripts/extract_snippet.py
+        run: python Scripts/extract_lines.py
 
       # 6️⃣ Show updated Markdown for debugging (optional)
       - name: Show updated Markdown
-        run: cat docs/Explanations/1_Explanation_Main.md
+        run: cat docs/Explanations/Testing.md
 
       # 7️⃣ Commit & push updated Markdown
       - name: Commit updated explanations
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/Explanations/1_Explanation_Main.md
-          git diff --cached --quiet || git commit -m "Auto-update 1_Explanation_Main.md"
+          git add docs/Explanations/Testing.md
+          git diff --cached --quiet || git commit -m "Auto-update Testing.md"
           git push
 
 
