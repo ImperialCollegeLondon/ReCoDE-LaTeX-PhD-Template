@@ -1,54 +1,57 @@
-import os
+# File: extract_snippet.py
+# Purpose: Extract a LaTeX snippet from main.tex and insert it into a Markdown file
+
 import re
 
-# ---------------------------------------------------
-# CONFIG
-# ---------------------------------------------------
+# -----------------------------
+# CONFIGURATION
+# -----------------------------
+tex_file = "phd-thesis/main.tex"                        # Your LaTeX source file
+md_file  = "docs/Explanations/1_Explanation_Main.md"   # Your Markdown explanation file
 
-tex_file = "phd-thesis/main.tex"
-explanation_file = "docs/Explanations/1_Explanation_Main.md"
-snippet_name = "documentclass"
+snippet_name = "documentclass"  # The snippet name in your LaTeX file
 
-# ---------------------------------------------------
-# EXTRACT SNIPPET
-# ---------------------------------------------------
+start_marker = f"% START SNIPPET: {snippet_name}"
+end_marker   = f"% END SNIPPET: {snippet_name}"
 
-start_pattern = rf"% START SNIPPET:\s*{snippet_name}"
-end_pattern   = rf"% END SNIPPET:\s*{snippet_name}"
+# -----------------------------
+# READ LaTeX FILE
+# -----------------------------
+with open(tex_file, "r", encoding="utf-8") as f:
+    tex_lines = f.readlines()
 
-with open(tex_file, "r") as f:
-    lines = f.readlines()
-
+# Extract the snippet
 inside = False
-snippet = []
+snippet_lines = []
 
-for line in lines:
-    if re.search(start_pattern, line):
+for line in tex_lines:
+    if start_marker in line:
         inside = True
         continue
-    if re.search(end_pattern, line) and inside:
+    if end_marker in line and inside:
         inside = False
         break
     if inside:
-        snippet.append(line)
+        snippet_lines.append(line)
 
-latex_block = "```latex\n" + "".join(snippet) + "```\n"
+# Prepare the fenced LaTeX block
+latex_block = "```latex\n" + "".join(snippet_lines) + "```\n"
 
-# ---------------------------------------------------
-# UPDATE THE EXPLANATION MARKDOWN
-# ---------------------------------------------------
+# -----------------------------
+# READ Markdown FILE
+# -----------------------------
+with open(md_file, "r", encoding="utf-8") as f:
+    md_content = f.read()
 
-with open(explanation_file, "r", encoding="utf-8") as f:
-    md = f.read()
+# Replace the placeholder with the LaTeX snippet
+placeholder_pattern = r"```latex\n<!-- SNIPPET WILL BE AUTO-INSERTED HERE -->\n```"
+updated_md = re.sub(placeholder_pattern, latex_block, md_content, count=1)
 
-updated = re.sub(
-    r"```latex\n<!-- SNIPPET WILL BE AUTO-INSERTED HERE -->\n```",
-    latex_block,
-    md,
-    count=1
-)
+# -----------------------------
+# WRITE BACK UPDATED MARKDOWN
+# -----------------------------
+with open(md_file, "w", encoding="utf-8") as f:
+    f.write(updated_md)
 
-with open(explanation_file, "w", encoding="utf-8") as f:
-    f.write(updated)
+print(f"Snippet '{snippet_name}' inserted into {md_file}")
 
-print(f"Updated snippet '{snippet_name}' inserted into {explanation_file}")
