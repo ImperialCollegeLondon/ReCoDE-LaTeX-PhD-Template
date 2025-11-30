@@ -5,7 +5,7 @@
 This repository provides a **LaTeX template** designed for preparing and formatting a **PhD Thesis at Imperial College London**.  
 The template ensures **full compliance with Imperial College’s official thesis formatting guidelines**, while offering a **clear, modern, and modular structure** that supports ease of use and long-term maintainability.
 
-![Imperial Thesis Template Preview](docs/assets/readme-img.png)
+![Imperial Thesis Template Preview](docs/assets/Cover.png)
 
 ---
 
