@@ -1,322 +1,342 @@
 ## 🎓 Introduction
 
-The *Imperial College London Thesis Submission Checklist* defines the essential requirements for the structure, contents, and presentation of a thesis, but it does **not prescribe a single fixed layout**.  
-This gives candidates flexibility in how they design and typeset their work, provided that:
+The *Theses for Imperial College Research Degrees: Guidance and notes* document describes the submission, format and requirements for theses submitted for the degrees of MPhil, PhD, MD(Res) and EngD.
 
-- All required elements are included.
-- The order of elements follows the regulations given in the checklist.
-- The document is clear, legible, and professionally presented.
+It specifies:
 
-This document serves four main purposes:
+- **Administrative rules** (submission route, declaration form, embargoes) – §§1–3, 12  
+- **Presentation rules** (layout, spacing, numbering, title page) – §4  
+- **Front‑matter requirements** (Statement of Originality, Copyright, Abstract, Table of Contents) – §§5–8  
+- **Back‑matter requirements** (Appendices, illustrative material) – §§9–10  
+- **Legal and ethical checks** (copyright, plagiarism, IP) – §11  
 
-1. **Explain** the official requirements defined in the Thesis Submission Checklist and related Imperial College regulations.  
-2. **Show** how each requirement has been implemented in this LaTeX template, by linking rules to specific code snippets.  
-3. **Recommend good practice** in academic typesetting and document design.  
-4. **Help you adapt the template** confidently while remaining compliant with Imperial’s rules.
+This explanation document shows how the provided LaTeX template:
 
-By combining regulatory guidance with technical explanations, this document is intended to help you both **use** and **customise** the template responsibly.
+1. Implements these requirements in `phd-thesis/main.tex`.
+2. Links each rule to a **snippet** (marked by `% START/END SNIPPET` in the LaTeX and `<!-- SNIPPET:... -->` here).
+3. Leaves reasonable freedom where the checklist explicitly allows it (§4.6).
+
+All code snippets in this document are **automatically imported** from `main.tex`, so this explanation stays in sync with the actual template.
 
 ---
 
 ## ⚙️ Document Settings — `\documentclass`  
-*(Checklist: Presentation section)*
+*(Checklist §4 – Presentation: legibility and overall structure)*
 
-Every LaTeX document starts by declaring its **document class**, which determines the overall structure and many formatting defaults (chapters, sections, margins, floats, etc.).
+Every LaTeX document begins by declaring its **document class**, which governs the overall structure and many default formatting choices.
 
-In this template we use the following declaration:
+In this template we use:
 
 <!-- SNIPPET: documentclass -->
 
-This choice supports the Presentation requirements in the checklist (the **Presentation** section, which covers legibility, layout and margins) in several ways:
+This supports the **Presentation** requirements in §4 as follows:
 
-- The `book` class provides **chapters**, **front matter**, and **appendices**, matching the typical structure of a PhD thesis.
-- A base font size of **11pt** gives good readability for a long document.
-- The `twoside` option prepares a **double‑sided layout** (odd/even pages), which is standard for theses.
-- The `openany` option allows chapters to begin on **any page**; if you prefer a more traditional layout where chapters always start on a right‑hand page, you can change this to `openright`.
+- `book` provides **chapters, front matter and appendices**, matching a thesis‑style structure.
+- A base font size of 11pt helps ensure the thesis is **“easily legible for examiners and illustrates information, diagrams, tables etc. clearly”** (§4.1).
+- `twoside` anticipates double‑sided printing, which is natural for a long document.
+- `openany` allows chapters to begin on either left‑ or right‑hand pages; you may change to `openright` if you prefer the more traditional “chapters on right‑hand pages”.
 
-In the Presentation section, the checklist states that **page content should be centred so that margins are equal‑distant from the edge of the page** and that main text should use **double or one‑and‑a‑half spacing**. The technical implementation of these rules is done in the **preamble**, described next.
+The more specific rules in §4 (centred text, margins, spacing, numbering) are implemented in the **preamble** and **title page** configuration, described next.
 
 ---
 
-## 🏛️ Preamble, Headers/Footers, and Title Page  
-*(Checklist: Presentation + Title‑page requirements)*
+## 🏛️ Preamble, Headers/Footers, Page Layout, and Title Page  
+*(Checklist §4 – Presentation: §§4.1–4.6)*
 
-The **preamble** collects all global formatting: packages, margins, page style, and other settings.  
-This template loads `preamble.tex` and then configures:
+Section **4 – Presentation** states that:
 
-- Headers and footers (page style).
-- Page numbering.
-- The title page.
+- **§4.1**: Electronic copies should be **easily legible** and clearly show information, diagrams, tables etc.  
+- **§4.2**: You must correct errors; examiners are not proof‑readers.  
+- **§4.3**: *“Page content should be centred, so that margins are equal distant from the edge of page. Double or one‑and‑a‑half spacing should be used, except for indented quotations or footnotes where single spacing may be used.”*  
+- **§4.4**: *“All pages must be numbered in one continuous sequence, i.e. from the title page to the last page of type, in Arabic numerals from 1 onwards… including maps, diagrams, blank pages, etc.”*  
+- **§4.5**: The **title page must bear**:
+  - The approved thesis **title**.  
+  - The candidate’s **full name** (as registered).  
+  - **Imperial College London** and the **Department** name.  
+  - The **degree** (e.g. PhD).  
+- **§4.6**: Any formatting not explicitly outlined is left to the **student’s judgement**, and *reasonable solutions will be accepted*.
 
-The core code is:
+This template implements those rules via the preamble and title page block:
 
 <!-- SNIPPET: preamble_title -->
 
-How this relates to specific checklist points:
+How this snippet maps to §4:
 
-- **Presentation section**:
-  - The requirement that **page content is centred with symmetrical margins** is implemented in `preamble.tex` (geometry, layout, spacing).
-  - The requirement for **double or one‑and‑a‑half line spacing** in the main text (with single spacing allowed for quotations or footnotes) is also enforced via settings in `preamble.tex`.
+- **Centred text and margins (§4.3)**  
+  The actual margin and layout configuration is stored in `preamble.tex` (geometry, line spacing, etc.). It is designed so that the **text block is centred** on the page with **symmetrical margins**, directly satisfying §4.3.
 
-- **Page numbering** (Presentation section):
-  - The checklist states that **all pages must be numbered in one continuous sequence in Arabic numerals from 1 onwards**, including the title page and all content (text, diagrams, blank pages, etc.).
-  - The commands `\pagenumbering{arabic}` and `\setcounter{page}{1}` ensure that the **title page is page 1** and that numbering continues in Arabic numerals throughout.
+- **Line spacing (§4.3)**  
+  `preamble.tex` uses appropriate line‑spacing commands so that the **main text** is in double or one‑and‑a‑half spacing, while **footnotes and indented quotations** may use single spacing, as allowed by §4.3.
 
-- **Title page information** (Presentation section – title page bullet points):
-  - The title page must include:
-    - The **approved thesis title**.
-    - The candidate’s **full name** (as registered).
-    - “Imperial College London” and the **Department** name.
-    - The **degree** (e.g. PhD, MPhil, EngD, MD(Res)).
-  - These items are defined in `titlepage.tex`, which is loaded by this snippet.
+- **Continuous Arabic page numbering (§4.4)**  
+  The snippet in `main.tex`:
+  - switches to **Arabic numerals**;  
+  - sets the **title page as page 1**;  
+  ensuring that all pages – from the title page through to the final page – form **one continuous Arabic sequence**, including pages with only diagrams or even intentionally blank ones, as required by §4.4.
 
-Because these components are crucial for compliance, this template also provides **separate explanatory pages**:
+- **Title page content (§4.5)**  
+  The title page is defined in `titlepage.tex`, which is loaded here. It is constructed so that the title page contains exactly the items listed in §4.5:
+  - the **approved title** of the thesis (matching examination entry);  
+  - your **full name**, as registered at Imperial;  
+  - **Imperial College London** and the **Department** name;  
+  - the **degree** for which the thesis is submitted.
 
-- One document that explains **`preamble.tex`** in detail (packages, margins, spacing, fonts, headers/footers, and how these satisfy the Presentation requirements).
-- One document that explains **`titlepage.tex`** and shows exactly how it fulfils the title‑page requirements in the checklist.
+- **Reasonable formatting choices (§4.6)**  
+  Fonts, chapter styles, and other typographic details are chosen to be professional and readable. Under §4.6, you may modify these choices (e.g. fonts, header style) as long as your changes remain **reasonable** and do not violate any explicit rules in §4.
+
+Because `preamble.tex` and `titlepage.tex` are central to §4, this template also provides **separate explanation pages**:
+
+- A **Preamble Explanation** describing layout, fonts, packages, and spacing.  
+- A **Title‑Page Explanation** showing how each field satisfies §4.5.
 
 ---
 
-## 📄 Dedication (Optional – not required in checklist)
+## 📄 Dedication  
+*(Not mentioned in checklist – optional)*
 
-The *Thesis Submission Checklist* does **not** require a dedication page and does not assign it a section number. Its inclusion and position are therefore entirely optional and left to your judgement.
+The checklist does **not** mention a dedication page; there is no numbered requirement for it in §§1–12.  
+Including a dedication is therefore entirely **optional** and up to you.
 
 By convention, a dedication:
 
-- Appears near the beginning of the thesis.
-- Contains a brief personal statement.
+- Appears near the beginning of the thesis.  
+- Contains a short personal message.
 
-This template provides a simple dedication page:
+This template includes an optional dedication page:
 
 <!-- SNIPPET: dedication -->
 
-You can:
-
-- Replace the example text with your own dedication.
-- Adjust the vertical spacing so that the text appears higher or lower on the page.
+You may rewrite the text and adjust spacing as you like. No checklist requirement depends on this section.
 
 ---
 
 ## 📜 Declaration of Originality  
-*(Checklist: “Statement of Originality” section)*
+*(Checklist §5 – Statement of Originality: §§5.1–5.2)*
 
-The checklist contains a section titled **Statement of Originality**, which requires that:
+Section **5 – Statement of Originality** states:
 
-- You include a **short statement in your own words** confirming that the thesis is your own work.
-- You confirm that all other work is properly referenced.
+- **§5.1**: *“Candidates must include a short statement in your own words, that the work is your own and that all else is appropriately referenced.”*  
+- **§5.2**: *“The Statement of Originality should appear at the beginning of the thesis.”*
 
-This template implements that requirement with a dedicated Declaration of Originality page:
+This template provides a Declaration of Originality page that implements §§5.1–5.2:
 
 <!-- SNIPPET: Declaration of Originality -->
 
-To comply with the **Statement of Originality** section:
+Compliance with §5:
 
-- Replace `Your Name` with your full registered name.
-- Ensure the wording clearly states that:
-  - The thesis and the work it presents are your own, and
-  - Any contributions from others or reused material are appropriately acknowledged.
+- The text explicitly asserts that the **thesis and the work it presents are your own**, except where properly referenced or acknowledged, matching the wording of §5.1.
+- You must replace `Your Name` with your **full registered name** to clearly identify yourself as the candidate.
+- The declaration is positioned near the **beginning of the thesis**, as §5.2 requires.
 
-This snippet also contains the **copyright statement** needed for the “Copyright Declaration” section of the checklist, because the thesis will be made available in the College’s repository.
+You may adjust the phrasing, but it must keep the same meaning as §5.1 to remain compliant.
 
 ---
 
 ## ©️ Copyright Declaration and Licence  
-*(Checklist: “Copyright Declaration” section)*
+*(Checklist §6 – Copyright Declaration: §§6.1–6.4)*
 
-The checklist’s **Copyright Declaration** section states that:
+Section **6 – Copyright Declaration** states:
 
-- As your thesis will be made available for public reference, you must include a **copyright statement** at the beginning.
-- You may choose from any of the **Creative Commons licences** when publishing your thesis on Spiral.
-- If no specific licence is required, the College recommends wording corresponding to a **Creative Commons Attribution‑Non Commercial 4.0 International Licence (CC BY‑NC 4.0)**.
+- **§6.1**: Because your thesis will be made available for **public reference**, the College requires a **copyright statement** at the beginning of your thesis.  
+- **§6.2**: You may choose any of the **Creative Commons licences** when publishing your thesis on Spiral.  
+- **§6.3**: If no specific licence is required, you are advised to use the CC BY‑NC 4.0 wording given in §6.3.  
+- **§6.4**: You are advised to complete an online course on copyright.
 
 In this template:
 
-- The copyright wording in the **Declaration of Originality** snippet should:
-  - Explicitly name the licence (e.g. “Creative Commons Attribution‑Non Commercial 4.0 International Licence (CC BY‑NC)”).
-  - Explain that others may reuse the thesis under the conditions of that licence (e.g. non‑commercial use with attribution).
+- The **copyright** text, placed together with the Declaration of Originality,  
+  - states that copyright rests with the **author**;  
+  - references a **Creative Commons licence**, consistent with §6.2;  
+  - can be edited to match the recommended CC BY‑NC 4.0 wording in §6.3 if you wish.
 
-This directly addresses the requirements in the **Copyright Declaration** section of the checklist.
+To fully satisfy **§6.1–6.3**:
+
+- Make sure the final text explicitly:
+  - names the licence (e.g. *Creative Commons Attribution‑Non Commercial 4.0 International Licence (CC BY‑NC)*), and  
+  - explains that reuse is allowed only under the licence conditions.
 
 ---
 
-## 📑 Abstract — Checklist **§7.1**
+## 📑 Abstract  
+*(Checklist §7 – Abstract: §7.1)*
 
-Section **7.1** of the checklist (titled **Abstract**) states:
+Section **7 – Abstract** contains a single requirement:
 
-> “The title-page should be followed by an abstract consisting of no more than **300 words**.”
+- **§7.1**: *“The title-page should be followed by an abstract consisting of no more than 300 words.”*
 
-This template enforces the correct position and basic structure:
+This template enforces the correct structure:
 
 <!-- SNIPPET: Abstract -->
 
 To comply with **§7.1**:
 
-- Place the abstract immediately after the title page and declarations.
-- Ensure it is **no longer than 300 words**.
-- Summarise:
-  - The research question or problem.
-  - The methods used.
-  - The main results.
-  - The overall conclusion or significance.
+- The abstract is placed **immediately after** the title page and declarations.  
+- You must keep the abstract **within 300 words**.  
+- It should concisely summarise:
+  - the research problem or question;  
+  - the methods used;  
+  - the main results;  
+  - the key conclusion or contribution.
 
-LaTeX will not enforce the 300‑word limit automatically; you must check this yourself.
+LaTeX does not count words automatically; you must check the word count manually to ensure it complies with §7.1.
 
 ---
 
 ## 🙏 Acknowledgements  
-*(Optional – not specified in a numbered section)*
+*(Not numbered in checklist – standard practice)*
 
-The checklist does **not** give a numbered section for Acknowledgements and does not mandate them, but they are standard in PhD theses.
+The checklist does **not** give a separate numbered section for **Acknowledgements** in §§1–12, and does not require them explicitly.  
+However, acknowledgements are standard and expected in most theses.
 
 Typical content:
 
-- Thanks to supervisors and co‑supervisors.
-- Recognition of collaborators, technical/administrative staff.
-- Acknowledgement of funding bodies and personal support (family, friends).
+- Thanks to supervisors and co‑supervisors.  
+- Acknowledgement of collaborators, technical and administrative staff.  
+- Recognition of funding bodies and personal support.
 
-This template provides an unnumbered Acknowledgements chapter:
+This template provides an Acknowledgements section:
 
 <!-- SNIPPET: Acknowledgements -->
 
-Because the checklist does not specify its exact position, you may place this section:
+You may position this:
 
-- After the abstract and before the table of contents, or
-- After the conclusion, depending on your department’s preference.
+- After the abstract and before the table of contents, or  
+- After the conclusion,  
+
+as long as the required items (title page, abstract, contents, etc.) remain in the correct order defined by §§4–8.
 
 ---
 
 ## 📣 Dissemination  
-*(Optional – not specified in a numbered section)*
+*(Not mentioned in checklist – optional)*
 
-The checklist does not have a numbered section on **Dissemination**, but it can be very useful to record research outputs related to the thesis:
+The checklist does **not** mention a **Dissemination** section in §§1–12.  
+It is therefore optional and provided as a convenience to list:
 
-- Journal articles.
-- Conference papers and posters.
-- Preprints and technical reports.
+- Journal articles.  
+- Conference papers and posters.  
+- Preprints and related publications.
 
-This template includes an optional Dissemination chapter:
+The template includes an optional Dissemination chapter:
 
 <!-- SNIPPET: Dissemination -->
 
-You can:
-
-- Replace the example items with your actual publications and outputs.
-- Remove this section entirely if you prefer.
-
-Since it is not part of a numbered requirement, its inclusion is purely optional.
+You may freely edit or remove this section; it is not mandated by any checklist point.
 
 ---
 
 ## 📚 Nomenclature and Acronyms  
-*(Optional – not specified in a numbered section)*
+*(Not mentioned in checklist – optional)*
 
-The checklist does not explicitly mention **nomenclature** or **lists of acronyms**, but they can significantly improve readability in technical or mathematical theses.
+The checklist does not explicitly mention **nomenclature** or **acronym** lists.  
+For technical and mathematical theses, these are good practice but not required.
 
-This template offers optional sections for both:
+This template offers optional sections:
 
 <!-- SNIPPET: Nomenclature_Acronyms -->
 
 Usage:
 
-- Use the **Nomenclature** section to define symbols, variables, and notation.
-- Use the **Acronyms** section to list abbreviations and their meanings.
+- Use **Nomenclature** for symbols and notation.  
+- Use **Acronyms** to define abbreviations.  
 
-These sections are examples of good practice rather than formal checklist requirements.
+These improve readability but are not tied to any specific paragraph in §§1–12.
 
 ---
 
-## 📋 Contents, List of Figures, and List of Tables  
-*(Checklist: “Table of Contents” — **§8.1**)*
+## 📋 Table of Contents, List of Figures, and List of Tables  
+*(Checklist §8 – Table of Contents: §8.1)*
 
-Section **8.1** of the checklist (titled **Table of Contents**) states that:
+Section **8 – Table of Contents** states:
 
-> “The abstract should be followed by a full table of contents (including any additional material supplied separately to the main body of the thesis) and a list of tables, figures, photographs and any other materials.”
+- **§8.1**: *“The abstract should be followed by a full table of contents (including any additional material supplied separately to the main body of the thesis) and a list of tables, figures, photographs and any other materials.”*
 
-This template implements **§8.1** as follows:
+This template implements **§8.1** with:
 
 <!-- SNIPPET: Contents, List of Figures/Tables -->
 
-How this satisfies **§8.1**:
+Mapping to §8.1:
 
-- `\tableofcontents` produces a **full table of contents** for the thesis, including chapters and sections.
-- `\listoffigures` generates the **List of Figures**.
-- `\listoftables` generates the **List of Tables**.
+- `\tableofcontents` gives the **full table of contents** immediately after the abstract, listing all chapters and sections and any additional material included in the document.  
+- `\listoffigures` provides the **List of Figures**.  
+- `\listoftables` provides the **List of Tables**.  
 
-Together, these lists ensure that all major structural elements and visual materials are clearly indexed, as required by section **8.1**.
+Together, they satisfy the requirement that the abstract be followed by a full ToC and lists of tables, figures, and other materials.
 
-Notes on LaTeX behaviour:
-
-- LaTeX writes the contents and lists to auxiliary files during compilation (`.toc`, `.lof`, `.lot`).
-- You may need to compile the document at least **twice** for new headings, figures, or tables to appear with correct page numbers.
+Note: LaTeX writes these lists to `.toc`, `.lof`, and `.lot` files during compilation; if something is missing, compile at least twice.
 
 ---
 
 ## 📘 Main Chapters  
-*(Checklist: overall thesis structure)*
+*(Checklist: overall structure between §§4–9)*
 
-The checklist describes the overall structure of the thesis (title page, abstract, table of contents, main body, appendices, etc.), but it does **not enforce specific chapter titles** for the main body.
+The checklist defines the overall **order** of elements:
 
-Typical PhD theses include:
+- Title page and required front matter (§§4–7)  
+- Table of contents and lists (§8.1)  
+- **Main body of the thesis**  
+- Bibliography  
+- Appendices (§9.1)
 
-- **Introduction** — context and aims.
-- **Related Work / Literature Review**.
-- **Methods / Materials and Methods**.
-- **Results**.
-- **Discussion**.
-- **Conclusion**.
+It does **not** prescribe specific chapter titles or internal structure for the main body; that is left to discipline‑specific conventions and §4.6 (“reasonable solutions”).
 
-This template provides a representative main‑chapter structure:
+This template provides a typical structure:
 
 <!-- SNIPPET: CHAPTERS -->
 
-Each chapter is in a separate file under `chapters/`, which keeps the main document manageable and makes it easy to rearrange or extend the structure while staying consistent with the overall framework implied by the checklist.
+Chapters are split into separate files under `chapters/`, which keeps `main.tex` readable and makes it easy to rearrange the main body while keeping the required overall order defined by the checklist.
 
 ---
 
-## 📎 Appendices — Checklist **§9.1**
+## 📎 Appendices  
+*(Checklist §9 – Appendices: §9.1)*
 
-Section **9.1** of the checklist (titled **Appendices**) states that:
+Section **9 – Appendices** states:
 
-- Appendices should be placed **at the end of the thesis after the bibliography**.
-- They should include:
-  - Any data that examiners may wish to refer to, but will not examine in detail.
-  - Copies of **permission documents** showing that you have permission to reproduce third‑party copyrighted material (papers, images, figures, maps, etc.).
+- **§9.1**: *“The appendices should be at the end of your thesis after your bibliography. It should include:  
+  • Any data that the examiners may wish to refer to, but that they will not examine.  
+  • Students must include copies of all permission documents showing that they have permission to republish all the third party copyrighted works in their thesis.”*
 
 This template implements **§9.1** as follows:
 
 <!-- SNIPPET: APPENDIX -->
 
-To comply with **§9.1**:
+To comply with §9.1:
 
-- Place all appendices **after** the bibliography in the final document.
-- Use appendix chapters (e.g. *Appendix A*, *Appendix B*, etc.) to:
-  - Store supplementary data, extended tables or figures.
-  - Include scanned or textual copies of permission letters and licences for third‑party material used in the thesis.
+- Place all appendices **after the bibliography** in the final thesis.  
+- Use them to store:
+  - Supporting data that examiners may wish to consult but are not required to examine.  
+  - Copies of all **permission documents** for third‑party material (figures, tables, images, maps, etc.).
+
+You can create multiple appendix chapters (Appendix A, B, C, …) as needed.
 
 ---
 
-## 📖 Bibliography (Required – linked to overall structure and **§8.1**)
+## 📖 Bibliography  
+*(Required; position implied by §8.1 and §9.1)*
 
-The checklist expects a **complete bibliography** of works cited in the thesis.  
-Although the section you provided numbers **§7.1** for the abstract and **§8.1** for the table of contents, it does not give a separate numbered heading labelled “Bibliography”. Instead, the requirement for a bibliography forms part of the **overall thesis structure**, in which:
+The checklist expects a **full bibliography of works cited** in the thesis, although in your excerpt it is not given a separate numbered heading. Its position is implied by the structure:
 
-- The abstract is followed by the table of contents and lists (**§8.1**).
-- The **main body** and **references/bibliography** then appear.
-- Appendices follow **after** the bibliography (**§9.1**).
+- **§8.1** describes the abstract, table of contents, and lists.  
+- **§9.1** explicitly states that appendices come **after your bibliography**.  
 
-This template uses BibLaTeX to generate the bibliography:
+So the bibliography must appear **between** the main body and the appendices.
+
+This template generates the bibliography with BibLaTeX:
 
 <!-- SNIPPET: Bibliography -->
 
-In practice, this satisfies the checklist’s expectation that:
+How this fits §§8.1 and 9.1:
 
-- All sources cited in the thesis are collected in a **full bibliography**.
-- The bibliography appears **before** the appendices (as implied by **§9.1**, which explicitly says appendices come at the end *after* the bibliography).
+- It collects all cited works into a **complete bibliography**.  
+- By placing this snippet **before** the Appendices snippet in `main.tex`, the bibliography naturally appears before the appendices, as §9.1 requires.
 
-To use this correctly:
+To use it:
 
-- Maintain references in one or more `.bib` files.
-- Configure the citation style in `preamble.tex` to match your discipline and any departmental guidance (e.g. numeric, Harvard, Vancouver).
-- Run the LaTeX ➝ Biber/BibTeX ➝ LaTeX compile cycle so that all citations and bibliography entries are resolved.
+- Maintain your references in `.bib` files.  
+- Configure the reference style in `preamble.tex` to match your discipline and any departmental guidance.  
+- Run LaTeX ➝ Biber/BibTeX ➝ LaTeX until all citations and bibliography entries are resolved.
+
+This ensures that your thesis has a full, correctly positioned bibliography, consistent with the structure implied by **§8.1** and **§9.1** of the checklist.
 
 ---
