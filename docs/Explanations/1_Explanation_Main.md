@@ -27,7 +27,20 @@ Every LaTeX document begins by declaring its **document class**, which governs t
 
 In this template we use:
 
-<!-- SNIPPET: documentclass -->
+```latex
+\documentclass[11pt, twoside, openany]{book} 
+% 'book' provides chapters, front matter, appendices and a well-structured layout suitable for theses.
+% 
+% '11pt' sets the base font size. You may select 10pt or 12pt if desired, but 11pt offers excellent readability.
+%
+% 'twoside' produces a double-sided layout (odd/even pages).
+% IMPORTANT: Imperial Thesis Regulation 4.3 requires *centred* text with symmetrical margins—handled in the preamble.
+%
+% 'openany' allows chapters to begin on either left or right pages.
+% For a more traditional thesis layout, use 'openright' (chapters always begin on odd-numbered pages).
+%
+% Full details about margins, fonts, and styling are explained in the PREAMBLE.
+```
 
 This supports the **Presentation** requirements in §4 as follows:
 
@@ -58,7 +71,39 @@ Section **4 – Presentation** states that:
 
 This template implements those rules via the preamble and title page block:
 
-<!-- SNIPPET: preamble_title -->
+```latex
+\input{preamble.tex}  % Loads all global formatting, packages, and margin settings.
+
+% -------------------------------
+% Header and Footer Style
+% -------------------------------
+\usepackage{fancyhdr}  
+% The 'fancyhdr' package gives full control over headers and footers.
+% Students can customise:
+%   - page numbers (left/centre/right)
+%   - add chapter titles in the header
+%   - add rules/lines or remove them
+%   - different layouts for odd/even pages when using 'twoside'
+
+\pagestyle{fancy}   % Apply the fancy header/footer style.
+\fancyhf{}          % Clear all header and footer fields.
+\fancyfoot[C]{\thepage}   % Page number centred at the bottom (Regulation 4.4).
+
+\renewcommand{\headrulewidth}{0pt}  % Remove top horizontal line.
+\renewcommand{\footrulewidth}{0pt}  % Remove bottom horizontal line.
+
+% -------------------------------
+% START OF DOCUMENT
+% -------------------------------
+\begin{document}
+
+% -------------------------------
+% Title Page
+% -------------------------------
+\pagenumbering{arabic}  % Imperial requires Arabic page numbers starting on the title page.
+\setcounter{page}{1}    % Title page = Page 1
+\input{titlepage.tex}   % Loads your custom title page.
+```
 
 How this snippet maps to §4:
 
@@ -104,7 +149,20 @@ By convention, a dedication:
 
 This template includes an optional dedication page:
 
-<!-- SNIPPET: dedication -->
+```latex
+% -------------------------------
+% Dedication Page
+% -------------------------------
+\thispagestyle{plain}   % Plain page style = page number only, centred at bottom.
+\vspace*{5cm}           % Move dedication text downwards. Modify value to adjust placement.
+
+\begin{center}
+    \emph{To my family,\\  
+    and friends.}
+    % Replace with your personal dedication text.
+    % Using \emph makes the text italicised.
+\end{center}
+```
 
 You may rewrite the text and adjust spacing as you like. No checklist requirement depends on this section.
 
@@ -120,7 +178,30 @@ Section **5 – Statement of Originality** states:
 
 This template provides a Declaration of Originality page that implements §§5.1–5.2:
 
-<!-- SNIPPET: Declaration of Originality -->
+```latex
+% -------------------------------
+% Declaration of Originality
+% -------------------------------
+\clearpage
+\thispagestyle{plain}
+\vspace*{4cm}
+
+\noindent 
+I hereby declare that this thesis and the work presented herein is my own work except where appropriately referenced or acknowledged.
+% Mandatory statement confirming originality of the thesis.
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{Your Name}   % Replace with your full name.
+                      % Good practice: sign physically after printing.
+
+\vspace{5cm}
+
+\noindent
+% Required copyright statement (Imperial thesis checklist, Section 6)
+The copyright of this thesis rests with the author and is made available under a Creative Commons Attribution-Non Commercial-No Derivatives license…
+```
 
 Compliance with §5:
 
@@ -166,7 +247,15 @@ Section **7 – Abstract** contains a single requirement:
 
 This template enforces the correct structure:
 
-<!-- SNIPPET: Abstract -->
+```latex
+% -------------------------------
+% Abstract (MANDATORY)
+% -------------------------------
+\clearpage
+\chapter*{Abstract}
+% Imperial requires an abstract of no more than 300 words.
+% The abstract provides a concise summary of the thesis.
+```
 
 To comply with **§7.1**:
 
@@ -196,7 +285,15 @@ Typical content:
 
 This template provides an Acknowledgements section:
 
-<!-- SNIPPET: Acknowledgements -->
+```latex
+% -------------------------------
+% Acknowledgements (Optional)
+% -------------------------------
+\clearpage
+\chapter*{Acknowledgements}
+% Not mandatory, but standard in most theses.
+% Thank supervisors, collaborators, family, funding agencies.
+```
 
 You may position this:
 
@@ -219,7 +316,19 @@ It is therefore optional and provided as a convenience to list:
 
 The template includes an optional Dissemination chapter:
 
-<!-- SNIPPET: Dissemination -->
+```latex
+% -------------------------------
+% Dissemination (Optional)
+% -------------------------------
+\clearpage
+\chapter*{Dissemination}
+% Optional section listing publications, posters, conference papers, preprints, etc.
+\begin{itemize}
+    \item Paper 1: Title, Journal/Conference, Year
+    \item Paper 2: Title, Journal/Conference, Year
+    \item Poster 1: Title, Conference, Year
+\end{itemize}
+```
 
 You may freely edit or remove this section; it is not mandated by any checklist point.
 
@@ -233,7 +342,22 @@ For technical and mathematical theses, these are good practice but not required.
 
 This template offers optional sections:
 
-<!-- SNIPPET: Nomenclature_Acronyms -->
+```latex
+% -------------------------------
+% Nomenclature (Optional)
+% -------------------------------
+\clearpage
+\printnomenclature
+% If the page appears empty: ensure you ran `makeindex` for the nomenclature file.
+
+% -------------------------------
+% Acronyms (Optional)
+% -------------------------------
+\clearpage
+\chapter*{Acronyms}
+\input{phd-thesis/Acronym}
+% Add or modify acronyms in the Acronym.tex file.
+```
 
 Usage:
 
@@ -253,7 +377,28 @@ Section **8 – Table of Contents** states:
 
 This template implements **§8.1** with:
 
-<!-- SNIPPET: Contents, List of Figures/Tables -->
+```latex
+% -------------------------------
+% Contents, List of Figures/Tables
+% -------------------------------
+\clearpage
+\tableofcontents
+% This command tells LaTeX to generate the Table of Contents automatically.
+% LaTeX collects all headings (chapters, sections, subsections, etc.) as it compiles and writes them to a helper file with extension .toc. On the next % compilation, it reads that .toc file and uses it to typeset the full table of contents with titles and page numbers.
+% If a new section or chapter doesn’t show up in the contents, you usually just need to compile the document at least twice.
+
+\listoffigures
+% This command generates a “List of Figures”.
+% Every time you use the figure environment together with a \caption{...}, LaTeX records that figure in a helper file with extension .lof. On the next % compilation, it reads that .lof file and prints a list showing each figure number, its caption, and the page number.
+% If the list is missing new figures or the page numbers look wrong, compile again so the .lof file is updated and then used.
+
+\listoftables
+% This command generates a “List of Tables”.
+% Every time you use the table environment with a \caption{...}, LaTeX records that table in a helper file with extension .lot. 
+% On the next compilation, it reads that .lot file and prints a list showing each table number, its caption, and the page number.
+% As with the other lists, after adding or renumbering tables you usually need at least two compilations for the list to become correct and up to date.
+
+```
 
 Mapping to §8.1:
 
@@ -282,7 +427,28 @@ It does **not** prescribe specific chapter titles or internal structure for the 
 
 This template provides a typical structure:
 
-<!-- SNIPPET: CHAPTERS -->
+```latex
+% -------------------------------
+% MAIN CHAPTERS
+% -------------------------------
+\chapter{Introduction}
+\input{chapters/01-introduction.tex}
+
+\chapter{Related Work}
+\input{chapters/02-related-work.tex}
+
+\chapter{Methods}
+\input{chapters/03-methods.tex}
+
+\chapter{Results}
+\input{chapters/04-results.tex}
+
+\chapter{Discussion}
+\input{chapters/05-discussion.tex}
+
+\chapter{Conclusion}
+\input{chapters/06-conclusion.tex}
+```
 
 Chapters are split into separate files under `chapters/`, which keeps `main.tex` readable and makes it easy to rearrange the main body while keeping the required overall order defined by the checklist.
 
@@ -299,7 +465,14 @@ Section **9 – Appendices** states:
 
 This template implements **§9.1** as follows:
 
-<!-- SNIPPET: APPENDIX -->
+```latex
+% -------------------------------
+% APPENDIX
+% -------------------------------
+\appendix
+\chapter{Appendix A}
+% Add additional appendices as needed: \chapter{Appendix B}, etc.
+```
 
 To comply with §9.1:
 
@@ -324,7 +497,13 @@ So the bibliography must appear **between** the main body and the appendices.
 
 This template generates the bibliography with BibLaTeX:
 
-<!-- SNIPPET: Bibliography -->
+```latex
+% -------------------------------
+% Bibliography
+% -------------------------------
+\backmatter
+\printbibliography   % Automatically formats the bibliography using BibLaTeX.
+```
 
 How this fits §§8.1 and 9.1:
 
