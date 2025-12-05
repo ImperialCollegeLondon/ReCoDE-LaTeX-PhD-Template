@@ -18,7 +18,7 @@ Students normally do not need to modify the preamble, but understanding it helps
 <!-- SNIPPET: preamble -->
 ```latex
 % ------------------------------------------------------
-% Encoding and Fonts TESTTTTT
+% Encoding and Fonts
 % ------------------------------------------------------
 \usepackage[utf8]{inputenc}         % Allows UTF-8 characters (e.g., é, ñ, ü).
                                     % Recommended: ensures your thesis handles
