@@ -14,6 +14,6 @@ In this template, the preamble is configured to ensure:
 Students normally do not need to modify the preamble, but understanding it helps ensure your thesis remains compliant and professionally formatted.
 
 ---
+<!-- SNIPPET: preamble -->
 
-```
 
