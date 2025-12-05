@@ -45,21 +45,28 @@ def main():
 
     md_content = md_path.read_text(encoding="utf-8")
 
-    # Pattern: from <!-- SNIPPET: preamble --> to the closing ``` of the latex block
+    # 1. Try to replace an existing block:
+    # <!-- SNIPPET: preamble -->
+    # ```latex
+    #...
+    # ```
     pattern_block = re.compile(
         r"(<!-- SNIPPET: preamble -->\s*)```latex.*?```",
         re.DOTALL,
     )
 
-    replacement_block = r"\1```latex\n" + snippet + "\n```"
+    # ✅ Use a function so backslashes in `snippet` are not interpreted
+    def repl_block(match):
+        prefix = match.group(1)  # the "<!-- SNIPPET... -->" + any whitespace
+        return f"{prefix}```latex\n{snippet}\n```"
 
-    new_md_content, replaced_count = re.subn(pattern_block, replacement_block, md_content)
+    new_md_content, replaced_count = pattern_block.subn(repl_block, md_content)
 
     if replaced_count == 0:
         print("[WARN] No existing snippet block found – inserting a new one after the marker.")
 
-        # If no full block is found, ensure the marker exists
         marker = "<!-- SNIPPET: preamble -->"
+
         if marker not in md_content:
             print("[INFO] Marker not found; appending marker + block at end of file.")
             if not md_content.endswith("\n"):
