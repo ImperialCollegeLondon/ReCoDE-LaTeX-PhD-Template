@@ -38,23 +38,26 @@ def main():
     md_path = Path(output_file)
     md_content = md_path.read_text(encoding="utf-8")
 
-    # 1. Ensure there is a placeholder in the file
     placeholder = "<!-- SNIPPET: preamble -->"
 
+    # 1. Remove any previously generated code block for this snippet
+    #    Pattern: <!-- SNIPPET: preamble --> followed by ```latex... ```
+    pattern_old_block = re.compile(
+        r"<!-- SNIPPET: preamble -->\s*```latex.*?```",
+        re.DOTALL
+    )
+    md_content, removed_count = re.subn(pattern_old_block, placeholder, md_content)
+    if removed_count > 0:
+        print(f"[INFO] Removed {removed_count} old generated block(s).")
+
+    # 2. Ensure the placeholder exists somewhere (in case it was removed manually)
     if placeholder not in md_content:
-        # Strategy: strip any existing generated code block and reinsert placeholder
-        # Remove old ```latex... ``` block that follows the placeholder (if present)
-        pattern = re.compile(
-            r"<!-- SNIPPET: preamble -->.*?```latex.*?```",
-            re.DOTALL
-        )
-        md_content = re.sub(pattern, placeholder, md_content)
+        print("[INFO] Placeholder not found; appending it at the end of the file.")
+        if not md_content.endswith("\n"):
+            md_content += "\n"
+        md_content += "\n" + placeholder + "\n"
 
-        # If still not present, append placeholder at end
-        if placeholder not in md_content:
-            md_content = md_content.rstrip() + "\n\n" + placeholder + "\n"
-
-    # 2. Now replace the placeholder with the new code block
+    # 3. Replace the placeholder with the new code block (once)
     def repl(_match, snippet_text=snippet):
         return "```latex\n" + snippet_text + "\n```"
 
