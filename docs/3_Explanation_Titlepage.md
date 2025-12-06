@@ -1,4 +1,4 @@
-## Title Page Explanation
+## Title Page Explanation 🎓
 
 This page explains the structure and purpose of the custom title page used in the PhD thesis template for Imperial College London. Each element is annotated to clarify whether it is **mandatory**, **recommended**, or **purely stylistic**.
 
