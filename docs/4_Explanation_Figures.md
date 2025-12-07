@@ -28,8 +28,8 @@ Key ideas illustrated by this template:
 <!-- SNIPPET: figures_four -->
 ```latex
 \begin{figure}[h!]
-    \centering
-
+    \centering 
+% TESTTTTTTT
     % -------------------
     % Row 1
     % -------------------
