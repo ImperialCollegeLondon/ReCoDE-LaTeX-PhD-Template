@@ -10,7 +10,7 @@ In this section, we demonstrate how to include and format tables within your the
 % -------------------------------------------------------------
 As shown in Table~\ref{tab:example_3x3}, the following 3×3 table presents placeholder data for parameters X, Y, and Z.  
 This structure is useful for showing compact relationships or comparing small sets of variables.
-
+% START SNIPPET: tables_3x3
 \begin{table}[h!]
     \centering
     % The optional caption [short title] defines what appears in the List of Tables.
@@ -27,13 +27,13 @@ This structure is useful for showing compact relationships or comparing small se
         \bottomrule
     \end{tabular}
 \end{table}
-
+% END SNIPPET: tables_3x3
 % -------------------------------------------------------------
 % 5-column Example Table
 % -------------------------------------------------------------
 Table~\ref{tab:example_5col} shows a 5-column table, suitable for experimental outputs, benchmarking studies, or design specifications.  
 You can easily extend the number of columns or replace placeholder values with your own data.
-
+% START SNIPPET: tables_5col
 \begin{table}[h!]
     \centering
     \caption[5-column Example Table]{A 5-column table template suitable for experimental results or design specifications with parameters A–E.}
@@ -52,3 +52,4 @@ You can easily extend the number of columns or replace placeholder values with y
         \bottomrule
     \end{tabular}
 \end{table}
+% END SNIPPET: tables_5col
