@@ -51,7 +51,7 @@ Key ideas illustrated by this template:
         X3 & 30 & m \\
         \bottomrule
     \end{tabular}
-\end{table}
+\end{table}   %TEEEEEEEEEEEEEEEEED
 ```
 
 ---
