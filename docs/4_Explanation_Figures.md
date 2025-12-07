@@ -29,7 +29,7 @@ Key ideas illustrated by this template:
 ```latex
 \begin{figure}[h!]
     \centering 
-% TESTTTTTTT
+
     % -------------------
     % Row 1
     % -------------------
