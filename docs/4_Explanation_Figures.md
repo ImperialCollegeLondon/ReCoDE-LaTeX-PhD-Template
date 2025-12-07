@@ -26,6 +26,53 @@ Key ideas illustrated by this template:
 - You can cite the source of the data or images in the caption (e.g. `\cite{Gomes2022}`).
 
 <!-- SNIPPET: figures_four -->
+```latex
+\begin{figure}[h!]
+    \centering
+
+    % -------------------
+    % Row 1
+    % -------------------
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{phd-thesis/figures/Picture 0.png}
+        \caption{Image a}
+        \label{fig:sub_a}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{phd-thesis/figures/Picture 1.png}
+        \caption{Image b}
+        \label{fig:sub_b}
+    \end{subfigure}
+    
+
+    % -------------------
+    % Row 2
+    % -------------------
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{phd-thesis/figures/Picture 2.png}
+        \caption{Image c}
+        \label{fig:sub_c}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{phd-thesis/figures/Picture 5.png}
+        \caption{Image d}
+        \label{fig:sub_d}
+    \end{subfigure}
+
+    % -------------------
+    % Overall caption 
+    % -------------------
+    \caption[Four-panel figure]{Four-panel figure showing different aspects of the experiment.  
+    Subfigures a–d correspond to distinct experimental conditions or processing steps.}
+    \label{fig:four_panels}
+\end{figure}
+```
 
 ### Two‑panel figure (side‑by‑side)
 
@@ -36,6 +83,30 @@ The second example (Figure `two_panels`) shows a **side‑by‑side two‑panel*
 - You want a cleaner layout than stacking two separate full‑width figures.
 
 <!-- SNIPPET: figures_two -->
+```latex
+\begin{figure}[h!]
+    \centering
+
+    % Panel a (left)
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{phd-thesis/figures/Picture 5.png}
+        \caption{Description of image a}
+        \label{fig:sub_a1}
+    \end{subfigure}
+    \hfill
+    % Panel b (right)
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{phd-thesis/figures/Picture 2.png}
+        \caption{Description of image b}
+        \label{fig:sub_b1}
+    \end{subfigure}
+
+    \caption[Two-panel figure]{Two-panel figure comparing condition a) and condition b).}
+    \label{fig:two_panels}
+\end{figure}
+```
 
 Key ideas illustrated:
 
