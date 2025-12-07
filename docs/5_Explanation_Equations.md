@@ -25,7 +25,7 @@ For a sample of $$n$$ observations $$x_1, x_2, \dots, x_n$$, the **sample standa
     s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} \left(x_i - \bar{x}\right)^2 }
     \label{eq:std_sample}
 \end{equation}
-%TESSST
+
 % Explanation:
 % - The equation environment automatically numbers the equation.
 % - \sum creates the summation symbol.
