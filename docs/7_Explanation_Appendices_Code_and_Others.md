@@ -48,7 +48,7 @@ side1 = 3
 side2 = 4
 hypotenuse = pythagoras(side1, side2)
 print("Hypotenuse:", hypotenuse)
-\end{minted}  %TESSST
+\end{minted} 
 ```
 
 ---
