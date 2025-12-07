@@ -1,0 +1,51 @@
+name: Update Figures Explanation
+
+on:
+  push:
+    paths:
+      - 'phd-thesis/chapters/04-results.tex'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-titlepage-md:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Upgrade pip
+        run: pip install --upgrade pip
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Update 4_Explanation_Figures.md from 04-results.tex
+        run: python Scripts/update_explanation_figures.py
+
+      - name: Show updated Markdown
+        run: cat docs/4_Explanation_Figures.md
+
+      - name: Commit & push updated figures explanation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add docs/4_Explanation_Figures.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-update 4_Explanation_Figures.md"
+            git push
+          else
+            echo "No changes to commit"
+          fi
