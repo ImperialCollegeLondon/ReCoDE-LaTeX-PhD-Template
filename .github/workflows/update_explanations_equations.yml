@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  update-titlepage-md:
+  update-equations-md:
     runs-on: ubuntu-latest
 
     steps:
