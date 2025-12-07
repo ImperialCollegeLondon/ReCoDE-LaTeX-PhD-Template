@@ -25,50 +25,32 @@ def extract_snippet(tex_lines, name):
 
     return "\n".join(lines)
 
-def main():
-    tex_path = Path(input_file)
-    md_path = Path(output_file)
+def update_snippet_in_md(md_content, name, snippet):
+    """
+    Replace the block starting at:
+      <!-- SNIPPET: {name} -->
+    and the following ```latex... ``` with a fresh block using `snippet`.
+    If no block is found, insert a new one after the marker.
+    """
+    marker = f"<!-- SNIPPET: {name} -->"
 
-    if not tex_path.is_file():
-        raise FileNotFoundError(f"Tex file not found: {tex_path}")
-    if not md_path.is_file():
-        raise FileNotFoundError(f"Markdown file not found: {md_path}")
-
-    tex_lines = tex_path.read_text(encoding="utf-8").splitlines()
-    snippet = extract_snippet(tex_lines, SNIPPET_NAME)
-
-    if not snippet.strip():
-        print(f"[WARN] No snippet found for '{SNIPPET_NAME}'")
-        return
-
-    print(f"[INFO] Snippet '{SNIPPET_NAME}' length: {len(snippet)} characters")
-
-    md_content = md_path.read_text(encoding="utf-8")
-
-    # 1. Try to replace an existing block:
-    # <!-- SNIPPET: figures -->
-    # ```latex
-    #...
-    # ```
+    # Pattern: marker + optional whitespace + ```latex... ```
     pattern_block = re.compile(
-        r"(<!-- SNIPPET: figures -->\s*)```latex.*?```",
+        rf"({re.escape(marker)}\s*)```latex.*?```",
         re.DOTALL,
     )
 
-    # ✅ Use a function so backslashes in `snippet` are not interpreted
     def repl_block(match):
-        prefix = match.group(1)  # the "<!-- SNIPPET... -->" + any whitespace
+        prefix = match.group(1)  # marker + whitespace
         return f"{prefix}```latex\n{snippet}\n```"
 
     new_md_content, replaced_count = pattern_block.subn(repl_block, md_content)
 
     if replaced_count == 0:
-        print("[WARN] No existing snippet block found – inserting a new one after the marker.")
-
-        marker = "<!-- SNIPPET: figures -->"
+        print(f"[WARN] No existing snippet block found for '{name}' – inserting a new one after the marker.")
 
         if marker not in md_content:
-            print("[INFO] Marker not found; appending marker + block at end of file.")
+            print(f"[INFO] Marker '{marker}' not found; appending marker + block at end of file.")
             if not md_content.endswith("\n"):
                 md_content += "\n"
             new_md_content = (
@@ -80,15 +62,39 @@ def main():
                 + "\n```"
             )
         else:
-            # Insert a fresh block right after the marker
             new_md_content = md_content.replace(
                 marker,
                 marker + "\n```latex\n" + snippet + "\n```",
             )
     else:
-        print(f"[INFO] Replaced {replaced_count} existing block(s).")
+        print(f"[INFO] Updated block for '{name}' ({replaced_count} occurrence(s)).")
 
-    md_path.write_text(new_md_content, encoding="utf-8")
+    return new_md_content
+
+def main():
+    tex_path = Path(input_file)
+    md_path = Path(output_file)
+
+    if not tex_path.is_file():
+        raise FileNotFoundError(f"Tex file not found: {tex_path}")
+    if not md_path.is_file():
+        raise FileNotFoundError(f"Markdown file not found: {md_path}")
+
+    tex_lines = tex_path.read_text(encoding="utf-8").splitlines()
+    md_content = md_path.read_text(encoding="utf-8")
+
+    for name in SNIPPET_NAMES:
+        snippet = extract_snippet(tex_lines, name)
+
+        if not snippet.strip():
+            print(f"[WARN] No snippet found for '{name}'")
+            continue
+
+        print(f"[INFO] Snippet '{name}' length: {len(snippet)} characters")
+
+        md_content = update_snippet_in_md(md_content, name, snippet)
+
+    md_path.write_text(md_content, encoding="utf-8")
     print(f"[DONE] Updated {output_file}")
 
 if __name__ == "__main__":
