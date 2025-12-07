@@ -37,6 +37,19 @@ Short code listings in an appendix are useful when you want to:
 To compile `minted` environments, you must enable **shell‑escape** in your LaTeX compiler (e.g. via project settings in Overleaf or using the `-shell-escape` flag with `latexmk`).
 
 <!-- SNIPPET: code_pythagoras -->
+```latex
+\begin{minted}{python}
+import math
+
+def pythagoras(a, b):
+    return math.sqrt(a**2 + b**2)
+
+side1 = 3
+side2 = 4
+hypotenuse = pythagoras(side1, side2)
+print("Hypotenuse:", hypotenuse)
+\end{minted}
+```
 
 ---
 
