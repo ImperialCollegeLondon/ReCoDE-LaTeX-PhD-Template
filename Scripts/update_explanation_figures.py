@@ -4,7 +4,7 @@ from pathlib import Path
 input_file = "phd-thesis/chapters/04-results.tex"
 output_file = "docs/4_Explanation_Figures.md"
 
-SNIPPET_NAME = "figures"
+SNIPPET_NAMES = ["figures_four", "figures_two"]
 
 def extract_snippet(tex_lines, name):
     start_marker = f"% START SNIPPET: {name}"
