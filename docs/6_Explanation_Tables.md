@@ -35,6 +35,24 @@ Key ideas illustrated by this template:
   - $$r$$ for right‑aligned numerical values.
 
 <!-- SNIPPET: tables_3x3 -->
+```latex
+\begin{table}[h!]
+    \centering
+    % The optional caption [short title] defines what appears in the List of Tables.
+    \caption[3×3 Example Table]{A 3×3 table template with parameters X, Y, and Z.}
+    \label{tab:example_3x3}
+    \begin{tabular}{l c r} 
+        % l = left aligned, c = centred, r = right aligned
+        \toprule
+        Parameter & Value & Units \\
+        \midrule
+        X1 & 10 & m \\
+        X2 & 20 & m \\
+        X3 & 30 & m \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+```
 
 ---
 
@@ -49,6 +67,26 @@ Key ideas illustrated by this template:
 - The caption explicitly describes what the table represents (e.g. parameters A–E for different samples).
 
 <!-- SNIPPET: tables_5col -->
+```latex
+\begin{table}[h!]
+    \centering
+    \caption[5-column Example Table]{A 5-column table template suitable for experimental results or design specifications with parameters A–E.}
+    \label{tab:example_5col}
+    \begin{tabular}{l c c c c r}
+        % lccccr layout:
+        % l = sample name left aligned
+        % c = four columns centred
+        % r = final column right-aligned (useful for numerical data)
+        \toprule
+        Sample & A & B & C & D & E \\
+        \midrule
+        1 & -- & -- & -- & -- & -- \\
+        2 & -- & -- & -- & -- & -- \\
+        3 & -- & -- & -- & -- & -- \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+```
 
 ---
 
