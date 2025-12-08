@@ -31,20 +31,20 @@ jobs:
         run: |
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Update 7_Explanation_Appendices_Code_and_Others.md from main.tex
+      - name: Update 7_Code.md from main.tex
         run: python Scripts/update_explanation_appendices.py
 
       - name: Show updated Markdown
-        run: cat docs/7_Explanation_Appendices_Code_and_Others.md
+        run: cat docs/7_Code.md
 
       - name: Commit & push updated Appendices explanation
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add docs/7_Explanation_Appendices_Code_and_Others.md
+          git add docs/7_Code.md
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-update 7_Explanation_Appendices_Code_and_Others.md"
+            git commit -m "Auto-update 7_Code.md"
             git push
           else
             echo "No changes to commit"
