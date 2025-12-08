@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 
 input_file = "phd-thesis/main.tex"
-output_file = "docs/7_Explanation_Appendices_Code_and_Others.md"
+output_file = "docs/7_Code.md"
 
 SNIPPET_NAMES = ["code_pythagoras"]
 
