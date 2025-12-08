@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 
 input_file = "phd-thesis/preamble.tex"
-output_file = "docs/2_Explanation_Preamble.md"
+output_file = "docs/2_Preamble.md"
 
 SNIPPET_NAME = "preamble"
 
