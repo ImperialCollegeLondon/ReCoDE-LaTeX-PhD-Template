@@ -31,20 +31,20 @@ jobs:
         run: |
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Update 5_Explanation_Equations.md from 03-methods.tex
+      - name: Update 5_Equations.md from 03-methods.tex
         run: python Scripts/update_explanation_equations.py
 
       - name: Show updated Markdown
-        run: cat docs/5_Explanation_Equations.md
+        run: cat docs/5_Equations.md
 
       - name: Commit & push updated equations explanation
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add docs/5_Explanation_Equations.md
+          git add docs/5_Equations.md
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-update 5_Explanation_Equations.md"
+            git commit -m "Auto-update 5_Equations.md"
             git push
           else
             echo "No changes to commit"
