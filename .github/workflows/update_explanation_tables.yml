@@ -31,11 +31,11 @@ jobs:
         run: |
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Update 6_Explanation_Tables.md from 02-related-work.tex
+      - name: Update 6_Tables.md from 02-related-work.tex
         run: python Scripts/update_explanation_tables.py
 
       - name: Show updated Markdown
-        run: cat docs/6_Explanation_Tables.md
+        run: cat docs/6_Tables.md
 
       - name: Commit & push updated tables explanation
         run: |
@@ -44,7 +44,7 @@ jobs:
 
           git add docs/6_Explanation_Tables.md
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-update 6_Explanation_Tables.md"
+            git commit -m "Auto-update 6_Tables.md"
             git push
           else
             echo "No changes to commit"
