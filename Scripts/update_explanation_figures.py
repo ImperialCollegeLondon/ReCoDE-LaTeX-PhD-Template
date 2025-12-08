@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 
 input_file = "phd-thesis/chapters/04-results.tex"
-output_file = "docs/4_Explanation_Figures.md"
+output_file = "docs/4_Figures.md"
 
 SNIPPET_NAMES = ["figures_four", "figures_two"]
 
