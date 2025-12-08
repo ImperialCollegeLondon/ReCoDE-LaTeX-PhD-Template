@@ -3,7 +3,7 @@ from pathlib import Path
 
 # Adjust these if your files live elsewhere
 input_file = "phd-thesis/chapters/03-methods.tex"
-output_file = "docs/5_Explanation_Equations.md"
+output_file = "docs/5_Equations.md"
 
 SNIPPET_NAMES = ["equations_std", "equations_mean"]
 
