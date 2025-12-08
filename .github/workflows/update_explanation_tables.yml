@@ -42,7 +42,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add docs/6_Explanation_Tables.md
+          git add docs/6_Tables.md
           if ! git diff --cached --quiet; then
             git commit -m "Auto-update 6_Tables.md"
             git push
