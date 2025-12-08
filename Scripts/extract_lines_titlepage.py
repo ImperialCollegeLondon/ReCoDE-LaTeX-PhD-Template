@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 
 input_file = "phd-thesis/titlepage.tex"
-output_file = "docs/3_Explanation_Titlepage.md"
+output_file = "docs/3_Title_Page.md"
 
 SNIPPET_NAME = "titlepage"
 
