@@ -17,7 +17,7 @@ In many experimental analyses, you need to quantify how variable your measuremen
 
 ### Sample standard deviation
 
-For a sample of $$n$$ observations $$x_1, x_2, \dots, x_n$$, the **sample standard deviation** $$s$$ measures how spread out the data are from the mean.
+For a sample of $n$ observations $x_1, x_2, \dots, x_n$, the **sample standard deviation** $s$ measures how spread out the data are from the mean.
 
 <!-- SNIPPET: equations_std -->
 ```latex
@@ -35,7 +35,7 @@ For a sample of $$n$$ observations $$x_1, x_2, \dots, x_n$$, the **sample standa
 
 ### Sample mean
 
-The sample mean $$\bar{x}$$ is the average of the observations and is used inside the expression for the standard deviation.
+The sample mean $\bar{x}$ is the average of the observations and is used inside the expression for the standard deviation.
 
 <!-- SNIPPET: equations_mean -->
 ```latex

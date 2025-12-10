@@ -13,7 +13,7 @@ A dedicated results chapter is standard in most thesis formats. In this chapter,
 
 ### 2×2 multi‑panel figure (four panels)
 
-The first example (Figure `four_panels`) uses a $$2 \times 2$$ layout (panels a–d). This is a good pattern when:
+The first example (Figure `four_panels`) uses a $2 \times 2$ layout (panels a–d). This is a good pattern when:
 
 - You have **four related scenarios** (e.g. different parameter settings, methods, or time points).
 - You want a **single caption** that explains how the panels relate.
@@ -111,7 +111,7 @@ The second example (Figure `two_panels`) shows a **side‑by‑side two‑panel*
 Key ideas illustrated:
 
 - Both panels share the same **y‑axis or visual scale**, making comparisons fair and readable.
-- Using widths like $$0.48\textwidth$$ places both panels across the page with minimal wasted space.
+- Using widths like $0.48\textwidth$ places both panels across the page with minimal wasted space.
 - Subfigure labels (e.g. `\ref{fig:sub_a1}`) let you refer to specific panels in the text.
 
 ### How to adapt these templates
