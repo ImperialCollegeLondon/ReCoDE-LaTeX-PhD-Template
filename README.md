@@ -3,7 +3,7 @@
 # 📘 Imperial College London PhD Thesis LaTeX Template
 
 This repository provides a **LaTeX template** designed for preparing and formatting a **PhD Thesis at Imperial College London**.  
-The template ensures **full compliance with Imperial College’s official thesis formatting guidelines**, while offering a **clear, modern, and modular structure** that supports ease of use and long-term maintainability.
+The template ensures **full compliance with Imperial College's official thesis formatting guidelines**, while offering a **clear, modern, and modular structure** that supports ease of use and long-term maintainability.
 
 ![Imperial Thesis Template Preview](docs/assets/Cover.png)
 
@@ -23,7 +23,7 @@ This exemplar was developed at **Imperial College London** by:
 
 The main objective of this project is to develop a **standardized, user-friendly LaTeX template** that:
 
-1. **Conforms strictly** to Imperial College London’s thesis presentation regulations and formatting requirements.  
+1. **Conforms strictly** to Imperial College London's thesis presentation regulations and formatting requirements.  
 2. **Facilitates consistency** in typography, structure, and referencing across departments and research groups.  
 3. **Simplifies the writing process** for postgraduate researchers by providing pre-defined environments for chapters, sections, figures, tables, and appendices.  
 4. **Integrates best practices** in academic writing, including compatibility with BibLaTeX for references and packages for mathematical typesetting, graphics, and indexing.  
@@ -51,7 +51,7 @@ This LaTeX template is designed primarily for **postgraduate researchers** prepa
 
 #### 4. Postgraduate Researchers from Other Institutions
 - Scholars from other universities looking for a high-quality exemplar of a compliant UK-style PhD thesis format.  
-- Researchers who wish to adapt Imperial’s clear, modular structure for their own institutional guidelines.  
+- Researchers who wish to adapt Imperial's clear, modular structure for their own institutional guidelines.  
 
 ---
 

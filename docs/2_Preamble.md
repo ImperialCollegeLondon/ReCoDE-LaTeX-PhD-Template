@@ -96,7 +96,7 @@ Students normally do not need to modify the preamble, but understanding it helps
                                     % Usage: \begin{minted}{python} ... \end{minted}
                                     %
                                     % IMPORTANT:
-                                    % Overleaf → Menu → Compiler → Enable “Shell escape”.
+                                    % Overleaf → Menu → Compiler → Enable "Shell escape".
                                     % Without shell-escape, minted will not compile.
 
 % ------------------------------------------------------
@@ -105,7 +105,7 @@ Students normally do not need to modify the preamble, but understanding it helps
 \usepackage[
   backend=biber,                    % Biber handles UTF-8, DOIs, URLs, many authors, etc.
   style=authoryear,                 % Produces citations like Smith (2020).
-  maxcitenames=2                    % Use “et al.” after 2 authors.
+  maxcitenames=2                    % Use "et al." after 2 authors.
 ]{biblatex}
 
 \addbibresource{bibliography.bib}   % Main bibliography file.
