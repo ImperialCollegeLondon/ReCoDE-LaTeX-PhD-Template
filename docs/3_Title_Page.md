@@ -131,5 +131,3 @@ The checklist does not explicitly require that you list your supervisors, but it
 
 \end{titlepage}
 ```
-```latex
-(placeholder – will be replaced by the script)
