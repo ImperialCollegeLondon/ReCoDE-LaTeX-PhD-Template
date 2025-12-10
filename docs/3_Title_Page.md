@@ -25,7 +25,7 @@ The checklist does not explicitly require that you list your supervisors, but it
 ```latex
 \begin{titlepage}
 \thispagestyle{fancy}               % Ensures the page number appears on the title page 
-                                    % (required by Section 4.3).
+                                    % (required by Checklist Section 4.3).
 
   \centering                        % Centers the entire title page horizontally.
 
