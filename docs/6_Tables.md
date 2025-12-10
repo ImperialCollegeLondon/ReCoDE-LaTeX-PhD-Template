@@ -17,8 +17,6 @@ Tables are ideal when you need to present:
 - **Parameter lists** (e.g. variables, units, default values).
 - **Categorical summaries** (e.g. related work, design options, case studies).
 
-They are often used in the **Related Work** chapter because they allow you to condense a large body of literature into a clear, scannable format.
-
 ---
 
 ### 3×3 example table
