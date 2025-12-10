@@ -6,7 +6,7 @@ According to the checklist (Section 9), appendices should come **after the bibli
 
 ---
 
-### 1. Role of appendices (Checklist §9)
+### 1. Role of appendices (Checklist Section 9)
 
 Section 9 of the Imperial checklist emphasises that appendices should be at the **end of the thesis** and may include:
 
@@ -53,7 +53,7 @@ print("Hypotenuse:", hypotenuse)
 
 ---
 
-### 3. Illustrative material and additional files (Checklist §10)
+### 3. Illustrative material and additional files (Checklist Section 10)
 
 Section 10 of the checklist covers **illustrative material** provided alongside the thesis (e.g. videos, large datasets, software, or other digital artefacts). Key points:
 
@@ -68,7 +68,7 @@ In practice, your thesis might:
 
 ---
 
-### 4. Copyright, plagiarism, and permissions (Checklist §11)
+### 4. Copyright, plagiarism, and permissions (Checklist Section 11)
 
 Section 11 of the checklist is crucial for any material in your appendices (figures, tables, code, documents):
 

@@ -5,8 +5,8 @@ The **preamble** in a LaTeX document is a section defined *before* `\begin{docum
 In this template, the preamble is configured to ensure:
 
 ✅ Compliance with **Imperial College Thesis Requirements** (Sections 4.1–4.6)  
-✅ Correct margins and page layout as required by **Regulation 4.3**  
-✅ Continuous Arabic numbering from the title page as required by **Regulation 4.4**  
+✅ Correct margins and page layout as required by **Section 4.3**  
+✅ Continuous Arabic numbering from the title page as required by **Section 4.4**  
 ✅ Professional typesetting of text, figures, tables, and mathematics  
 ✅ Clear, accessible PDF structure for electronic submission  
 ✅ A clean and modern academic style appropriate for different scientific fields.
@@ -83,7 +83,7 @@ Students normally do not need to modify the preamble, but understanding it helps
 \geometry{
   a4paper,
   inner=3cm, outer=3cm,             % Left/right margins — MUST be symmetrical 
-                                    % to satisfy Imperial Thesis Regulation 4.3.
+                                    % to satisfy Checklist Section 4.3.
   top=3cm, bottom=3cm
 }
                                     % To change margins: modify these values.
