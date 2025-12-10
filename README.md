@@ -107,11 +107,6 @@ Follow these steps to begin using the Imperial College London PhD Thesis Templat
        ```
      - Ensure **Biber** runs for references (BibLaTeX workflow).
 
-<!-- Any references, or other resources. -->
-## Additional Resources 🔗
-
-- Relevant sources, websites, images, and further reading.
-
 <!-- LICENCE.
 Imperial prefers BSD-3. Please update the LICENSE.md file with the current year.
 -->
