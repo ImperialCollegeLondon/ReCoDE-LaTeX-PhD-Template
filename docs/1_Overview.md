@@ -12,7 +12,7 @@ It specifies:
 
 The LaTeX files of the template are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. This explanation document shows how the provided LaTeX template:
 - implements these requirements.tex` 
-- leaves reasonable freedom where the checklist explicitly allows it (§4.6).
+- leaves reasonable freedom where the checklist explicitly allows it (Section 4.6).
 
 ---
 
