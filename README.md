@@ -3,7 +3,7 @@
 # 📘 Imperial College London PhD Thesis LaTeX Template
 
 This repository provides a **LaTeX template** designed for preparing and formatting a **PhD Thesis at Imperial College London**.  
-The template ensures **full compliance with Imperial College’s official thesis formatting guidelines**, while offering a **clear, modern, and modular structure** that supports ease of use and long-term maintainability.
+The template ensures **full compliance with Imperial College's official thesis formatting guidelines**, while offering a **clear, modern, and modular structure** that supports ease of use and long-term maintainability.
 
 ![Imperial Thesis Template Preview](docs/assets/Cover.png)
 
@@ -23,7 +23,7 @@ This exemplar was developed at **Imperial College London** by:
 
 The main objective of this project is to develop a **standardized, user-friendly LaTeX template** that:
 
-1. **Conforms strictly** to Imperial College London’s thesis presentation regulations and formatting requirements.  
+1. **Conforms strictly** to Imperial College London's thesis presentation regulations and formatting requirements.  
 2. **Facilitates consistency** in typography, structure, and referencing across departments and research groups.  
 3. **Simplifies the writing process** for postgraduate researchers by providing pre-defined environments for chapters, sections, figures, tables, and appendices.  
 4. **Integrates best practices** in academic writing, including compatibility with BibLaTeX for references and packages for mathematical typesetting, graphics, and indexing.  
@@ -51,7 +51,7 @@ This LaTeX template is designed primarily for **postgraduate researchers** prepa
 
 #### 4. Postgraduate Researchers from Other Institutions
 - Scholars from other universities looking for a high-quality exemplar of a compliant UK-style PhD thesis format.  
-- Researchers who wish to adapt Imperial’s clear, modular structure for their own institutional guidelines.  
+- Researchers who wish to adapt Imperial's clear, modular structure for their own institutional guidelines.  
 
 ---
 
@@ -67,13 +67,15 @@ This LaTeX template is designed primarily for **postgraduate researchers** prepa
 You can work either locally or directly in Overleaf — choose the workflow that suits you best.
 
 - Option A — Overleaf (no local installation required):
+
   - Use **Overleaf** to compile and manage your thesis online.
-  - Import the project via “New Project → Import from GitHub” or “New Project → Upload Project” (ZIP).
+  - Import the project via "New Project → Import from GitHub" or "New Project → Upload Project" (ZIP).
   - In Project Settings, set **Compiler** to **XeLaTeX** or **LuaLaTeX**.
   - If using **BibLaTeX**, set **Bibliography tool** to **Biber**.
   - Note: Overleaf project size and quota limits depend on your plan.
 
 - Option B — Local setup:
+
   - Install a **LaTeX distribution**: [TeX Live](https://www.tug.org/texlive/), [MiKTeX](https://miktex.org/), or [MacTeX](https://www.tug.org/mactex/).
   - Recommended compiler: **XeLaTeX** or **LuaLaTeX** (for Unicode and modern font support).
   - Ensure **Biber** is installed if you use **BibLaTeX**.
@@ -88,11 +90,13 @@ Follow these steps to begin using the Imperial College London PhD Thesis Templat
 
 1. Choose your workflow:
    - Overleaf:
+   
      - Open Overleaf → New Project → Import from GitHub (or Upload Project ZIP).
      - In Project Settings, set Compiler to **XeLaTeX** or **LuaLaTeX**.
      - If using **BibLaTeX**, set Bibliography tool to **Biber**.
      - Click **Recompile** and start editing files (e.g., `preamble.tex`, `settings.tex`, `chapters/`).
    - Local:
+   
      - Clone the repository:
        ```bash
        git clone https://github.com/your-username/imperial-thesis-template.git

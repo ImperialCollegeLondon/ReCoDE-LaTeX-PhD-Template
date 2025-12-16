@@ -6,14 +6,14 @@ This page explains the structure and purpose of the custom title page used in th
 
 Section 4.4 of the [Theses for Imperial College Research Degrees](https://www.imperial.ac.uk/media/imperial-college/administration-and-support-services/registry/academic-governance/public/academic-policy/research-degree-examinations/Thesis-Submission-Checklist.pdf) emphasizes that **all pages must be numbered in one continuous sequence**, from the title page to the last page of text, in **Arabic numerals starting at 1**. This sequence must include *everything* in the document: maps, diagrams, blank pages, etc.
 
-A lot of students forget to number the very first page, treating it as a separate “cover”. Regardless of your aesthetic preferences, the checklist is quite clear on this point: **the title page is page 1** (yes, even if it ruins your minimalist designer soul).
+A lot of students forget to number the very first page, treating it as a separate "cover". Regardless of your aesthetic preferences, the checklist is quite clear on this point: **the title page is page 1** (yes, even if it ruins your minimalist designer soul).
 
 ### Required information on the title page (Checklist Section 4.5)
 
 Section 4.5 specifies that the title page **must** include:
 
 - The **approved title** of the thesis (as confirmed at examination entry)
-- The **candidate’s full name**, as registered at the College
+- The **candidate's full name**, as registered at the College
 - **Imperial College London** and the **name of the Department**
 - The **degree** for which the thesis is submitted (e.g. PhD)
 
@@ -45,7 +45,7 @@ The checklist does not explicitly require that you list your supervisors, but it
                                     % To adjust the size of the first capital letter only,
                                     % modify the 16pt (font size) and 18pt (baseline spacing).
 
-  \vspace{0.5cm}                    % Adjust spacing between “Imperial College London”
+  \vspace{0.5cm}                    % Adjust spacing between "Imperial College London"
                                     % and the School/Institute name.
 
   % -------------------------------
@@ -93,7 +93,7 @@ The checklist does not explicitly require that you list your supervisors, but it
     {\fontsize{16pt}{18pt}\selectfont D}~
     {\fontsize{16pt}{18pt}\selectfont T}hesis\par
   }
-                                    % You can adjust the way “PhD Thesis” appears by
+                                    % You can adjust the way "PhD Thesis" appears by
                                     % modifying the font size or removing spacing.
 
   \vspace{1cm}
@@ -126,7 +126,7 @@ The checklist does not explicitly require that you list your supervisors, but it
   % -------------------------------
   \vfill                             % Pushes the date to the bottom of the page automatically.
 
-  \today                             % Automatically inserts today’s date.
+  \today                             % Automatically inserts today's date.
                                      % Replace with your official submission date if preferred.
 
 \end{titlepage}

@@ -28,6 +28,7 @@ Key ideas illustrated by this template:
 - The **caption** clearly states what the table contains: parameters X, Y, and Z.
 - The optional **short caption** (`[3×3 Example Table]`) defines the entry in the *List of Tables*.
 - Column alignment (`l c r`) is used to control how text and numbers are positioned:
+
   - $l$ for left‑aligned labels,
   - $c$ for centred columns,
   - $r$ for right‑aligned numerical values.
