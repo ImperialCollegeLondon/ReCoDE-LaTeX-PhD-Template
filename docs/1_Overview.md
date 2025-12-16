@@ -505,10 +505,7 @@ This template generates the bibliography with BibLaTeX:
 \printbibliography   % Automatically formats the bibliography using BibLaTeX.
 ```
 
-How this fits §§8.1 and 9.1:
-
-- It collects all cited works into a **complete bibliography**.  
-- By placing this snippet **before** the Appendices snippet in `main.tex`, the bibliography naturally appears before the appendices, as §9.1 requires.
+This collects all cited works into a **complete bibliography** placed between the main chapters and the appendices, as required.
 
 To use it:
 
