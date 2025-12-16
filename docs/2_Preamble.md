@@ -2,7 +2,7 @@
 
 The **preamble** in a LaTeX document is a section defined *before* `\begin{document}`that controls the **formatting, structure, typography, citation style, margins, and overall layout** of the entire thesis.
 
-In this template, the preamble is configured to ensure:
+In this template, the preamble is defined in [`phd_thesis/preamble.tex`](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/blob/main/phd-thesis/preamble.tex) and is configured to ensure:
 
 ✅ Compliance with **Imperial College Thesis Requirements** (Sections 4.1–4.6)  
 ✅ Correct margins and page layout as required by **Regulation 4.3**  
@@ -11,7 +11,7 @@ In this template, the preamble is configured to ensure:
 ✅ Clear, accessible PDF structure for electronic submission  
 ✅ A clean and modern academic style appropriate for different scientific fields.
 
-Students normally do not need to modify the preamble, but understanding it helps ensure your thesis remains compliant and professionally formatted.
+You may customise the preamble to suit your needs and aesthetic goals, but be careful to maintain compliance with Imperial’s regulations. The preamble provided here is designed to provide a solid starting point that balances good typography with institutional requirements.
 
 ---
 
