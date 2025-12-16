@@ -34,7 +34,7 @@ Short code listings in an appendix are useful when you want to:
 - Illustrate how a key formula or method is implemented in practice.
 - Provide enough detail for interested readers to understand or reproduce your work, without overloading the main chapters.
 
-To compile `minted` environments, you must enable **shell‑escape** in your LaTeX compiler (e.g. via project settings in Overleaf or using the `-shell-escape` flag with `latexmk`).
+To compile `minted` environments, you must use the `minted` package and enable **shell‑escape** in your LaTeX compiler (e.g. via project settings in Overleaf or using the `-shell-escape` flag with `latexmk`).
 
 <!-- SNIPPET: code_pythagoras -->
 ```latex
