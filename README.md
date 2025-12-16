@@ -97,7 +97,7 @@ Follow these steps to begin using the Imperial College London PhD Thesis Templat
        ```bash
        git clone https://github.com/your-username/imperial-thesis-template.git
        ```
-     - Open the project in your IDE and compile (example):
+     - The LaTeX source files are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. Open the directory in your IDE and compile (example):
        ```bash
        latexmk -pdf -xelatex main.tex
        ```
