@@ -10,13 +10,15 @@ It specifies:
 - **Back‑matter requirements** (Appendices, illustrative material) – §§9–10  
 - **Legal and ethical checks** (copyright, plagiarism, IP) – §11  
 
-This explanation document shows how the provided LaTeX template:
+The LaTeX files of the template are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. This explanation document shows how the provided LaTeX template:
+- implements these requirements.tex` 
+- leaves reasonable freedom where the checklist explicitly allows it (Section 4.6).
 
-1. Implements these requirements in `phd-thesis/main.tex`.
-2. Links each rule to a **snippet** (marked by `% START/END SNIPPET` in the LaTeX and `<!-- SNIPPET:... -->` here).
-3. Leaves reasonable freedom where the checklist explicitly allows it (§4.6).
+---
 
-All code snippets in this document are **automatically imported** from `main.tex`, so this explanation stays in sync with the actual template.
+## Snippets
+
+When examining the LaTeX files of this template, you will notice that certain important sections are marked as **snippets** using comments such as `% START/END SNIPPET`. You can ignore these comments when reading the LaTeX code; they are only there to help with the generation of these documentation pages. You can/should remove them to declutter your document.
 
 ---
 
