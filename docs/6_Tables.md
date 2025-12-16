@@ -2,7 +2,7 @@
 
 This page explains how to structure and format tables in your thesis, using examples from a typical **Related Work** or **Results** chapter. The aim is to provide reusable, compliant layouts rather than to dictate your scientific content.
 
-From an Imperial College checklist perspective, tables must be:
+The [Theses for Imperial College Research Degrees](https://www.imperial.ac.uk/media/imperial-college/administration-and-support-services/registry/academic-governance/public/academic-policy/research-degree-examinations/Thesis-Submission-Checklist.pdf) states that tables must be:
 
 - **Clearly readable**: appropriate font size, no overcrowded cells, and good use of spacing.
 - **Numbered and captioned** consistently (Table 2.1, 2.2, …).
@@ -17,13 +17,11 @@ Tables are ideal when you need to present:
 - **Parameter lists** (e.g. variables, units, default values).
 - **Categorical summaries** (e.g. related work, design options, case studies).
 
-They are often used in the **Related Work** chapter because they allow you to condense a large body of literature into a clear, scannable format.
-
 ---
 
 ### 3×3 example table
 
-As shown in Table `example_3x3`, a simple $$3 \times 3$$ layout is useful for compact relationships or for comparing a small set of variables.
+As shown in Table `example_3x3`, a simple $3 \times 3$ layout is useful for compact relationships or for comparing a small set of variables.
 
 Key ideas illustrated by this template:
 
@@ -31,9 +29,9 @@ Key ideas illustrated by this template:
 - The optional **short caption** (`[3×3 Example Table]`) defines the entry in the *List of Tables*.
 - Column alignment (`l c r`) is used to control how text and numbers are positioned:
 
-  - $$l$$ for left‑aligned labels,
-  - $$c$$ for centred columns,
-  - $$r$$ for right‑aligned numerical values.
+  - $l$ for left‑aligned labels,
+  - $c$ for centred columns,
+  - $r$ for right‑aligned numerical values.
 
 <!-- SNIPPET: tables_3x3 -->
 ```latex

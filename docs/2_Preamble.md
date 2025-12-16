@@ -2,16 +2,16 @@
 
 The **preamble** in a LaTeX document is a section defined *before* `\begin{document}`that controls the **formatting, structure, typography, citation style, margins, and overall layout** of the entire thesis.
 
-In this template, the preamble is configured to ensure:
+In this template, the preamble is defined in [`phd_thesis/preamble.tex`](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/blob/main/phd-thesis/preamble.tex) and is configured to ensure:
 
-✅ Compliance with **Imperial College Thesis Requirements** (Sections 4.1–4.6)  
-✅ Correct margins and page layout as required by **Regulation 4.3**  
-✅ Continuous Arabic numbering from the title page as required by **Regulation 4.4**  
+✅ Compliance with [Theses for Imperial College Research Degrees](https://www.imperial.ac.uk/media/imperial-college/administration-and-support-services/registry/academic-governance/public/academic-policy/research-degree-examinations/Thesis-Submission-Checklist.pdf) (Sections 4.1–4.6)
+✅ Correct margins and page layout as required by **Section 4.3**  
+✅ Continuous Arabic numbering from the title page as required by **Section 4.4**  
 ✅ Professional typesetting of text, figures, tables, and mathematics  
 ✅ Clear, accessible PDF structure for electronic submission  
 ✅ A clean and modern academic style appropriate for different scientific fields.
 
-Students normally do not need to modify the preamble, but understanding it helps ensure your thesis remains compliant and professionally formatted.
+You may customise the preamble to suit your needs and aesthetic goals, but be careful to maintain compliance with Imperial’s regulations. The preamble provided here is designed to provide a solid starting point that balances good typography with institutional requirements.
 
 ---
 
@@ -83,7 +83,7 @@ Students normally do not need to modify the preamble, but understanding it helps
 \geometry{
   a4paper,
   inner=3cm, outer=3cm,             % Left/right margins — MUST be symmetrical 
-                                    % to satisfy Imperial Thesis Regulation 4.3.
+                                    % to satisfy Checklist Section 4.3.
   top=3cm, bottom=3cm
 }
                                     % To change margins: modify these values.
@@ -129,5 +129,3 @@ Students normally do not need to modify the preamble, but understanding it helps
                                     % Convenience macro for correctly typesetting "Ph.D."
                                     % You can define similar commands for common terms.
 ```
-```latex
-(placeholder – will be replaced)
