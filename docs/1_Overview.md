@@ -123,6 +123,7 @@ How this snippet maps to Section 4:
   
       - switches to **Arabic numerals**;  
       - sets the **title page as page 1**;
+  
     ensuring that all pages – from the title page through to the final page – form **one continuous Arabic sequence**, including pages with only diagrams or even intentionally blank ones, as required by Section 4.4.
 
 - **Title page content (Section 4.5)**  
