@@ -105,7 +105,7 @@ Option B — Local setup (after installing a LaTeX distribution):
          latexmk -pdf -xelatex main.tex
          ```
     
-      or
+        or
     
          ```bash
          latexmk -pdf -lualatex main.tex
