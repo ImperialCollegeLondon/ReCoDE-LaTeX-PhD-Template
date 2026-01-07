@@ -67,10 +67,10 @@ Section **4 – Presentation** states that:
 - **Section 4.4**: *“All pages must be numbered in one continuous sequence, i.e. from the title page to the last page of type, in Arabic numerals from 1 onwards… including maps, diagrams, blank pages, etc.”*  
 - **Section 4.5**: The **title page must bear**:
 
-  - The approved thesis **title**.  
-  - The candidate's **full name** (as registered).  
-  - **Imperial College London** and the **Department** name.  
-  - The **degree** (e.g. PhD).  
+    - The approved thesis **title**.  
+    - The candidate's **full name** (as registered).  
+    - **Imperial College London** and the **Department** name.  
+    - The **degree** (e.g. PhD).  
 
 - **Section 4.6**: Any formatting not explicitly outlined is left to the **student’s judgement**, and *reasonable solutions will be accepted*.
 
