@@ -3,6 +3,7 @@
 This page explains how to typeset mathematical equations in LaTeX using a simple but common example: the **sample mean** and **sample standard deviation**. The goal is to show you how to write clear, well‑formatted equations that can be referenced in your thesis text.
 
 The [Theses for Imperial College Research Degrees](https://www.imperial.ac.uk/media/imperial-college/administration-and-support-services/registry/academic-governance/public/academic-policy/research-degree-examinations/Thesis-Submission-Checklist.pdf) states that equations must be:
+
 - **Legible and consistently formatted** (same fonts, sizes, and spacing).
 - **Numbered systematically** when referred to in the text.
 - **Explained in words**: you should never drop an equation into the thesis without telling the reader what it means and how it is used.
@@ -17,7 +18,7 @@ In many experimental analyses, you need to quantify how variable your measuremen
 
 ### Sample standard deviation
 
-For a sample of $n$ observations $x_1, x_2, \dots, x_n$, the **sample standard deviation** $s$ measures how spread out the data are from the mean.
+For a sample of $n$ observations $x_1, x_2, \dots, x_n$, the **sample standard deviation** $s$ measures how spread out the data are from the mean. In this example, Equation std_sample shows that the standard deviation increases as the data points deviate further from the sample mean. This form is widely used when analysing repeated measurements, sensor data, or experimental uncertainty.
 
 <!-- SNIPPET: equations_std -->
 ```latex
@@ -52,5 +53,3 @@ In a thesis that follows the Imperial guidelines, each equation should:
 - Be **numbered** if you need to refer to it later (e.g. “see Equation (4.2)”).
 - Be **introduced and explained** in complete sentences (what does each symbol mean? what is the purpose of this equation?).
 - Be **used** in your discussion of methods or results, not left floating without context.
-
-In this example, Equation std_sample shows that the standard deviation increases as the data points deviate further from the sample mean. This form is widely used when analysing repeated measurements, sensor data, or experimental uncertainty.
