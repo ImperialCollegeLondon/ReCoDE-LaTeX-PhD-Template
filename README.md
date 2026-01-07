@@ -97,7 +97,7 @@ Option B — Local setup (after installing a LaTeX distribution):
   - Clone the repository:
     
          ```bash
-         git clone https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template.
+         git clone https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template
          ```
   - The LaTeX source files are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. Open the directory in your IDE and compile (example):
     
