@@ -86,12 +86,14 @@ Option B — Local setup:
 Follow these steps to begin using the Imperial College London PhD Thesis Template:
 
 Option A — Overleaf:
+
   - Import the project via "New Project → Import from GitHub" or "New Project → Upload Project" (ZIP).
   - In Project Settings, set **Compiler** to **XeLaTeX** or **LuaLaTeX**.
   - If using **BibLaTeX**, set **Bibliography tool** to **Biber**.
   - Click **Recompile** and start editing files (e.g., `preamble.tex`, `chapters/`).
 
 Option B — Local setup:
+
   - **After installing LaTeX**: 
     - Clone the repository:
          ```bash
@@ -106,7 +108,8 @@ Option B — Local setup:
          latexmk -pdf -lualatex main.tex
          ```
        - Ensure **Biber** runs for references (BibLaTeX workflow).
-      -Note: If you do not have access to the repository, contact the [Early Career Researcher Institute](https://www.imperial.ac.uk/early-career-researcher-institute/).
+         
+    - Note: If you do not have access to the repository, contact the [Early Career Researcher Institute](https://www.imperial.ac.uk/early-career-researcher-institute/).
   
 ---
 
