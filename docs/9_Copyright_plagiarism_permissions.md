@@ -1,4 +1,4 @@
-## Copyright, plagiarism, and permissions (Checklist §11)
+## 🛡️ Copyright, plagiarism, and permissions (Checklist §11)
 
 Section 11 of the checklist is crucial for any material in your appendices (figures, tables, code, documents):
 
