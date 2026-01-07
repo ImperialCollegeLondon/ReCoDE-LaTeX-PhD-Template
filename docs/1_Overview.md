@@ -272,10 +272,10 @@ To comply with **Section 7.1**:
 - You must keep the abstract **within 300 words**.  
 - It should concisely summarise:
 
-  - the research problem or question;  
-  - the methods used;  
-  - the main results;  
-  - the key conclusion or contribution.
+      - the research problem or question;  
+      - the methods used;  
+      - the main results;  
+      - the key conclusion or contribution.
 
 LaTeX does not count words automatically; you must check the word count manually to ensure it complies with Section 7.1.
 
