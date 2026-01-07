@@ -94,10 +94,10 @@ Option A — Overleaf:
 
 Option B — Local setup:
 
-  - **After installing LaTeX**: 
+  - **After installing a LaTeX distribution**: 
     - Clone the repository:
          ```bash
-         git clone [PhD Thesis Template Repository](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template)
+         git clone [PhD Thesis Template Repository](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template).
          ```
        - The LaTeX source files are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. Open the directory in your IDE and compile (example):
          ```bash
