@@ -62,16 +62,13 @@ This LaTeX template is designed primarily for **postgraduate researchers** prepa
 - Understanding of **academic writing conventions** and thesis structure (chapters, abstracts, references, appendices).  
 - Optional: Experience with **BibLaTeX**, **Biber**, and reference management tools (e.g., Zotero, Mendeley).  
 
-### 💻 System
+### 💻 System 
 
 You can work either locally or directly in Overleaf — choose the workflow that suits you best.
 
 Option A — Overleaf (no local installation required):
 
   - Use **Overleaf** to compile and manage your thesis online.
-  - Import the project via "New Project → Import from GitHub" or "New Project → Upload Project" (ZIP).
-  - In Project Settings, set **Compiler** to **XeLaTeX** or **LuaLaTeX**.
-  - If using **BibLaTeX**, set **Bibliography tool** to **Biber**.
   - Note: Overleaf project size and quota limits depend on your plan.
 
 Option B — Local setup:
@@ -80,39 +77,35 @@ Option B — Local setup:
   - Recommended compiler: **XeLaTeX** or **LuaLaTeX** (for Unicode and modern font support).
   - Ensure **Biber** is installed if you use **BibLaTeX**.
   - Compatible with **TeXstudio**, **VS Code (LaTeX Workshop)**, or any LaTeX IDE.
-  - Minimum **5 GB free disk space** for LaTeX and auxiliary files.
-
----
-
+  - Requirements: Minimum **5 GB free disk space** for LaTeX and auxiliary files.
+    
 ## 🚀 Getting Started
 
 Follow these steps to begin using the Imperial College London PhD Thesis Template:
 
-1. Choose your workflow:
-   - Overleaf:
-   
-     - Open Overleaf → New Project → Import from GitHub (or Upload Project ZIP).
-     - In Project Settings, set Compiler to **XeLaTeX** or **LuaLaTeX**.
-     - If using **BibLaTeX**, set Bibliography tool to **Biber**.
-     - Click **Recompile** and start editing files (e.g., `preamble.tex`, `settings.tex`, `chapters/`).
-   - Local:
-   
-     - Clone the repository:
-       ```bash
-       git clone https://github.com/your-username/imperial-thesis-template.git
-       ```
-     - The LaTeX source files are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. Open the directory in your IDE and compile (example):
-       ```bash
-       latexmk -pdf -xelatex main.tex
-       ```
-       or
-       ```bash
-       latexmk -pdf -lualatex main.tex
-       ```
-     - Ensure **Biber** runs for references (BibLaTeX workflow).
+Option A — Overleaf:
+  - Import the project via "New Project → Import from GitHub" or "New Project → Upload Project" (ZIP).
+  - In Project Settings, set **Compiler** to **XeLaTeX** or **LuaLaTeX**.
+  - If using **BibLaTeX**, set **Bibliography tool** to **Biber**.
+  - Click **Recompile** and start editing files (e.g., `preamble.tex`, `chapters/`).
 
-<!-- LICENCE.
-Imperial prefers BSD-3. Please update the LICENSE.md file with the current year.
+Option B — Local setup:
+  - **After installing LaTeX**: 
+    - Clone the repository:
+         ```bash
+         git clone [PhD Thesis Template Repository](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template)
+         ```
+       - The LaTeX source files are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. Open the directory in your IDE and compile (example):
+         ```bash
+         latexmk -pdf -xelatex main.tex
+         ```
+         or
+         ```bash
+         latexmk -pdf -lualatex main.tex
+         ```
+       - Ensure **Biber** runs for references (BibLaTeX workflow).
+      -Note: If you do not have access to the repository, contact the [Early Career Researcher Institute](https://www.imperial.ac.uk/early-career-researcher-institute/).
+  
 -->
 ## Licence 📄
 
