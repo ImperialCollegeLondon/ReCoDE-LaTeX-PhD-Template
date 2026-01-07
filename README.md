@@ -92,14 +92,13 @@ Option A — Overleaf:
   - If using **BibLaTeX**, set **Bibliography tool** to **Biber**.
   - Click **Recompile** and start editing files (e.g., `preamble.tex`, `chapters/`).
 
-Option B — Local setup:
+Option B — Local setup (After installing a LaTeX distribution):
 
-  - **After installing a LaTeX distribution**: 
-    - Clone the repository:
+  - Clone the repository:
          ```bash
-         git clone [PhD Thesis Template Repository](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template).
+         git clone https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template.
          ```
-       - The LaTeX source files are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. Open the directory in your IDE and compile (example):
+  - The LaTeX source files are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. Open the directory in your IDE and compile (example):
          ```bash
          latexmk -pdf -xelatex main.tex
          ```
@@ -107,9 +106,9 @@ Option B — Local setup:
          ```bash
          latexmk -pdf -lualatex main.tex
          ```
-       - Ensure **Biber** runs for references (BibLaTeX workflow).
+  - Ensure **Biber** runs for references (BibLaTeX workflow).
          
-    - Note: If you do not have access to the repository, contact the [Early Career Researcher Institute](https://www.imperial.ac.uk/early-career-researcher-institute/).
+  - Note: If you do not have access to the repository, contact the [Early Career Researcher Institute](https://www.imperial.ac.uk/early-career-researcher-institute/).
   
 ---
 
