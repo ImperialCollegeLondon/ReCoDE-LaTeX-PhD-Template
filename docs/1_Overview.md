@@ -70,7 +70,7 @@ Section **4 – Presentation** states that:
     - The approved thesis **title**.  
     - The candidate's **full name** (as registered).  
     - **Imperial College London** and the **Department** name.  
-    - The **degree** (e.g. PhD).  
+    - The **degree** (e.g. PhD)
 
 - **Section 4.6**: Any formatting not explicitly outlined is left to the **student’s judgement**, and *reasonable solutions will be accepted*.
 
