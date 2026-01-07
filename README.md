@@ -99,13 +99,12 @@ Option B — Local setup (after installing a LaTeX distribution):
          ```bash
          git clone https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template
          ```
-  - The LaTeX source files are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. Open the directory in your IDE and compile (example):
+  - The LaTeX source files are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. Open the directory in your IDE and compile (two examples, according whether you are using XeLaTeX or LuaLaTeX):
     
          ```bash
          latexmk -pdf -xelatex main.tex
          ```
-            or
-    
+            
          ```bash
          latexmk -pdf -lualatex main.tex
          ```
