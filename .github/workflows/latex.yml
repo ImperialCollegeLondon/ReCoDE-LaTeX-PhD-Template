@@ -1,10 +1,10 @@
-name: LaTeX Build
+name: Build LaTeX PDF
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -17,10 +17,11 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: phd-thesis/main.tex
+          root_file: main.tex
           compiler: xelatex
-          work_in_root_file_dir: true
-          shell_escape: true  
+          working_directory: phd-thesis
+          latexmk_use_xelatex: true
+          continue_on_error: false
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
