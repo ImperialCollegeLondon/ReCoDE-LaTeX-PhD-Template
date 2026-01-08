@@ -1,6 +1,6 @@
 ## 📄 Template in PDF
 
-The full thesis template in a PDF version generated can be downloaded [here] (https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/raw/main/output/phd-thesis.pdf)
+The full thesis template in a PDF version generated can be downloaded [here](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/raw/main/output/phd-thesis.pdf)
 
 **Important:** This template is intended to help you **comply with Imperial College London guidance and notes on the submission, format and requirements of theses submitted for the
 degrees of MPhil, PhD, MD(Res) and EngD.**, not to teach LaTeX. It shows how to achieve the required formatting, layout, and structure according to college regulations.  
