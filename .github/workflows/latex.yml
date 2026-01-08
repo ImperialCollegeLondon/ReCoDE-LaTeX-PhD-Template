@@ -1,10 +1,10 @@
-name: Build LaTeX Thesis
+name: LaTeX Build
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build:
@@ -14,20 +14,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install TeX Live
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra biber
-
+      
       - name: Compile LaTeX
-        run: |
-          cd phd-thesis
-          xelatex -interaction=nonstopmode -shell-escape main.tex
-          biber main || true
-          xelatex -interaction=nonstopmode -shell-escape main.tex
-          xelatex -interaction=nonstopmode -shell-escape main.tex
-          mkdir -p ../docs/assets
-          mv main.pdf ../docs/assets/
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: phd-thesis/main.tex
+          compiler: xelatex
+          latexmk_use_xelatex: true
+          latexmk_shell_escape: true
+          work_in_root_file_dir: true
+
+      
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: thesis-pdf
+          path: phd-thesis/main.pdf
 
 
 
