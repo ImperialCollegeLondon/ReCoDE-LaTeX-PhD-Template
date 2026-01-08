@@ -27,9 +27,17 @@ jobs:
               xelatex -shell-escape -interaction=nonstopmode main.tex
             "
 
+      - name: Copy PDF to output folder
+        run: |
+          mkdir -p output
+          cp phd-thesis/main.pdf output/phd-thesis.pdf
 
-      - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: phd-thesis-pdf
-          path: phd-thesis/main.pdf
+      - name: Commit PDF to repo
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add output/phd-thesis.pdf
+          git commit -m "Update PhD thesis PDF [skip ci]" || echo "No changes to commit"
+          git push origin HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
