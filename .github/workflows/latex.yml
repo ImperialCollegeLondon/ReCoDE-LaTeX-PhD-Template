@@ -11,23 +11,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: phd-thesis/main.tex
           working_directory: phd-thesis
+          root_file: main.tex
+          latexmk_flags: -pdf -interaction=nonstopmode
 
-      - name: Prepare output directory
+      - name: Copy PDF to docs/assets
         run: |
-          mkdir -p dist
-          cp phd-thesis/main.pdf dist/phd-thesis.pdf
+          mkdir -p docs/assets
+          cp phd-thesis/main.pdf docs/assets/phd-thesis.pdf
 
-      - name: Upload PDF
+      - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: phd-thesis-pdf
           path: docs/assets/phd-thesis.pdf
-
 
