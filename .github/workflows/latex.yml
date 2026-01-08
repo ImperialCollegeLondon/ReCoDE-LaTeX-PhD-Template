@@ -25,9 +25,8 @@ jobs:
           root_file: main.tex
           working_directory: phd-thesis
           compiler: latexmk
-          latexmk_use_lualatex: true
+          latexmk_use_xelatex: true
           latexmk_shell_escape: true
           args: -file-line-error -halt-on-error -interaction=nonstopmode
-          output_directory: ../docs/assets
 
 
