@@ -19,6 +19,7 @@ jobs:
         with:
           working_directory: phd-thesis
           root_file: main.tex
+          latexmk_use_lualatex: true
 
       - name: Copy PDF to docs/assets
         run: |
