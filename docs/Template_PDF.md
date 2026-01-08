@@ -2,13 +2,9 @@
 
 The full thesis template in a PDF version generated via LaTeX:
 
-<iframe 
-    src="https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/raw/main/output/phd-thesis.pdf" 
-    width="100%" 
-    height="800px" 
-    style="border: none;">
-    Your browser does not support inline PDFs. You can 
-    <a href="https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/raw/main/output/phd-thesis.pdf">download the PDF here</a>.
+<iframe src="https://imperialcollegelondon.github.io/ReCoDE-LaTeX-PhD-Template/output/phd-thesis.pdf" width="100%" height="800px" style="border: none;">
+Your browser does not support inline PDFs. You can download the PDF here: 
+<a href="https://imperialcollegelondon.github.io/ReCoDE-LaTeX-PhD-Template/output/phd-thesis.pdf">Download PDF</a>.
 </iframe>
 
 ---
