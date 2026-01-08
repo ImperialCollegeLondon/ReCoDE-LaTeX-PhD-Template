@@ -9,29 +9,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: blang/latex:ubuntu  # TeX Live 2023-like image
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Lychee
-        uses: lycheeverse/lychee-action@v2
-        with:
-          markdown: true
-
-      - name: Compile LaTeX thesis
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: main.tex
-          working_directory: phd-thesis
-          compiler: latexmk
-          latexmk_use_xelatex: true
-          latexmk_shell_escape: true
-          args: -file-line-error -halt-on-error -interaction=nonstopmode
-
-      - name: Move PDF to docs/assets
+      - name: Compile LaTeX
         run: |
-          mkdir -p docs/assets
-          mv phd-thesis/main.pdf docs/assets/main.pdf
+          cd phd-thesis
+          xelatex -interaction=nonstopmode -shell-escape main.tex
+          mkdir -p ../docs/assets
+          mv main.pdf ../docs/assets/
 
 
