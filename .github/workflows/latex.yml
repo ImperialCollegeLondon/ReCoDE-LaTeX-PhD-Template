@@ -19,7 +19,7 @@ jobs:
         with:
           working_directory: phd-thesis
           root_file: main.tex
-          compiler: lualatex
+          compiler: latexmk
           latexmk_use_lualatex: true
           args: -file-line-error -halt-on-error -interaction=nonstopmode
 
