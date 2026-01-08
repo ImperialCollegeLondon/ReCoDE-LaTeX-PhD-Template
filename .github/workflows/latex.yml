@@ -17,8 +17,6 @@ jobs:
       - name: Set up Lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          exclude:
-            - 'docs/YOUR_LINK_HERE'
           markdown: true
 
       - name: Set up LaTeX environment
@@ -29,4 +27,5 @@ jobs:
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           args: -file-line-error -halt-on-error -interaction=nonstopmode
+          output_directory: docs/assets
 
