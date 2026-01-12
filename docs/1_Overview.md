@@ -10,7 +10,7 @@ It specifies:
 - **Back‑matter requirements** (appendices, illustrative material) – Sections 9–10  
 - **Legal and ethical checks** (copyright, plagiarism, IP) – Section 11  
 
-The LaTeX files of the template are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. This explanation document shows how the provided LaTeX template:
+The LaTeX files of the template are found in the [phd-thesis](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/tree/main/phd-thesis) directory. The final pdf generated can be downloaded [here](https://github.com/ImperialCollegeLondon/ReCoDE-LaTeX-PhD-Template/raw/main/output/phd-thesis.pdf). This explanation document shows how the provided LaTeX template:
 
 - Implements the college theses requirements in `phd-thesis/main.tex`.
 - Links each rule to a **snippet** (marked by `% START/END SNIPPET` in the LaTeX and `<!-- SNIPPET:... -->` here).
